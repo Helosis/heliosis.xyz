@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heliosis Terminal | Crypto Funding Rates & Basis Arbitrage Yields</title>
+  <meta name="description" content="Autonomous crypto funding rates terminal, cash & carry basis arbitrage opportunities, and real-time cross-exchange spreads between Binance and Bybit.">
+  <meta name="keywords" content="crypto funding rates, basis arbitrage, cash and carry crypto, binance bybit funding, delta neutral yield, heliosis">
+  
+  <!-- OpenGraph / Social -->
+  <meta property="og:title" content="Heliosis Terminal | Crypto Funding & Arbitrage">
+  <meta property="og:description" content="Autonomous crypto funding rates terminal & real-time basis yield screener.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://heliosis.xyz">
+  
+  <!-- Tailwind CSS & Google Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              glow: '#00f59b'
+            },
+            dark: {
+              bg: '#090d16',
+              card: '#0f172a',
+              border: '#1e293b',
+              subtle: '#334155'
+            }
+          },
+          fontFamily: {
+            mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
+            sans: ['Inter', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #080c14;
+      color: #f1f5f9;
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono-nums {
+      font-family: 'JetBrains Mono', monospace;
+      font-variant-numeric: tabular-nums;
+    }
+    .glow-green {
+      text-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+    }
+    .glow-box {
+      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+    }
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-black">
+
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-950/60 via-slate-900 to-emerald-950/60 border-b border-emerald-500/20 px-4 py-2 text-xs text-center text-slate-300 flex items-center justify-center gap-2">
+    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase tracking-wide">Autonomous 24/7</span>
+    <span>Live Binance & Bybit Market Data Screener</span>
+    <span class="text-slate-500 hidden sm:inline">|</span>
+    <span class="hidden sm:inline text-slate-400">Next Funding Settlement in: <strong id="settlement-countdown" class="text-emerald-400 font-mono-nums">--:--:--</strong></span>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="border-b border-dark-border bg-dark-card/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center font-black text-black text-lg shadow-lg shadow-emerald-500/20">
+          ⚡
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-lg tracking-tight text-white flex items-center gap-1">
+              HELIOSIS<span class="text-emerald-400">.XYZ</span>
+            </span>
+            <span class="text-[10px] font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded">PRO QUANT</span>
+          </div>
+          <p class="text-[11px] text-slate-400 -mt-0.5 hidden sm:block">Basis Yield & Cross-Exchange Arbitrage Terminal</p>
+        </div>
+      </div>
+
+      <!-- Quick Exchange Affiliate Action Buttons -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a id="nav-bybit-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-yellow-400 border border-yellow-500/20 transition-all hover:scale-105">
+          <span>Bybit VIP</span>
+          <span class="text-[10px] bg-yellow-500/20 text-yellow-300 px-1 rounded">0% Fee</span>
+        </a>
+        <a id="nav-binance-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/20 transition-all hover:scale-105">
+          <span>Binance VIP</span>
+          <span class="text-[10px] bg-amber-500/20 text-amber-300 px-1 rounded">20% Off</span>
+        </a>
+        <button id="refresh-data-btn" class="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all">
+          <svg id="refresh-spinner" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+          <span class="hidden sm:inline">Refresh</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Market Overview Metrics Bar -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 w-full">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+      <!-- Stat 1 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
+        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Market Funding Bias</span>
+        <div class="mt-1 flex items-baseline gap-2">
+          <span id="stat-sentiment" class="text-base sm:text-lg font-bold text-emerald-400">Loading...</span>
+        </div>
+        <div class="mt-1 text-[11px] text-slate-400 flex items-center justify-between">
+          <span>Pos: <b id="stat-pos-count" class="text-emerald-400">0</b></span>
+          <span>Neg: <b id="stat-neg-count" class="text-rose-400">0</b></span>
+        </div>
+      </div>
+
+      <!-- Stat 2 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
+        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Top Basis Cash & Carry APR</span>
+        <div class="mt-1 flex items-baseline gap-2">
+          <span id="stat-top-basis-apr" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400 glow-green">--%</span>
+          <span id="stat-top-basis-sym" class="text-xs text-slate-300 font-semibold bg-slate-800 px-1.5 py-0.5 rounded">--</span>
+        </div>
+        <span class="text-[11px] text-slate-400 block mt-1">Delta-neutral Spot + Perp</span>
+      </div>
+
+      <!-- Stat 3 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
+        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Top Exchange Spread APR</span>
+        <div class="mt-1 flex items-baseline gap-2">
+          <span id="stat-top-arb-apr" class="text-base sm:text-lg font-bold font-mono-nums text-cyan-400">--%</span>
+          <span id="stat-top-arb-sym" class="text-xs text-slate-300 font-semibold bg-slate-800 px-1.5 py-0.5 rounded">--</span>
+        </div>
+        <span class="text-[11px] text-slate-400 block mt-1">Binance vs Bybit Spread</span>
+      </div>
+
+      <!-- Stat 4 -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
+        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Engine Status</span>
+        <div class="mt-1 flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+          <span class="text-base sm:text-lg font-bold text-white">AUTONOMOUS</span>
+        </div>
+        <span id="stat-updated-time" class="text-[11px] text-slate-400 block mt-1 truncate">Updated: Syncing...</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partner Affiliate Banner -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 w-full">
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-emerald-500/30 p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="text-center md:text-left">
+        <div class="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-0.5 rounded-full font-semibold mb-2">
+          <span>🚀 Maximize Arbitrage Yields</span>
+        </div>
+        <h2 class="text-lg sm:text-xl font-bold text-white">Execute Delta-Neutral Spreads with VIP Low Fee Rebates</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">Lower execution maker fees directly increase your net funding arbitrage profit. Register via Heliosis official institutional partners:</p>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-3 shrink-0">
+        <a id="hero-bybit-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:opacity-90 shadow-lg transition-transform hover:scale-105 flex items-center gap-2">
+          <span>Claim Bybit $30,000 Bonus</span>
+          <span>→</span>
+        </a>
+        <a id="hero-binance-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 transition-transform hover:scale-105 flex items-center gap-2">
+          <span>Binance 20% Fee Kickback</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Navigation Tabs -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-dark-border pb-3">
+      <!-- Tabs -->
+      <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-1 sm:pb-0">
+        <button onclick="switchTab('basis')" id="tab-btn-basis" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
+          🌾 Cash & Carry Basis Yields
+        </button>
+        <button onclick="switchTab('arbitrage')" id="tab-btn-arbitrage" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
+          ⚡ Cross-Exchange Spreads
+        </button>
+        <button onclick="switchTab('matrix')" id="tab-btn-matrix" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
+          📊 Full Funding Matrix
+        </button>
+        <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
+          🧮 Yield Calculator
+        </button>
+      </div>
+
+      <!-- Search Box -->
+      <div class="relative w-full sm:w-64">
+        <input type="text" id="symbol-search" placeholder="Search coin (e.g. BTC, SOL)..." class="w-full bg-slate-900 border border-dark-border rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors">
+        <svg class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </div>
+    </div>
+
+    <!-- TAB 1: Cash & Carry Basis Yields -->
+    <div id="tab-content-basis" class="mt-4">
+      <div class="bg-dark-card border border-dark-border rounded-xl p-4 mb-4 text-xs text-slate-300 leading-relaxed">
+        <strong class="text-white font-semibold flex items-center gap-1 mb-1">
+          <span class="text-emerald-400 text-sm">●</span> What is Cash & Carry Arbitrage?
+        </strong>
+        By holding the underlying coin in <strong>Spot</strong> and simultaneously opening an equal-sized <strong>1x Short Perpetual</strong> contract, your position is 100% delta-neutral (immune to price drops or pumps). When funding rates are positive, you receive funding payments every 8 hours directly into your account as pure passive yield.
+      </div>
+
+      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
+              <th class="py-3 px-4">Asset</th>
+              <th class="py-3 px-4">Mark Price</th>
+              <th class="py-3 px-4">8h Funding Rate</th>
+              <th class="py-3 px-4">Estimated APR</th>
+              <th class="py-3 px-4">Compound APY</th>
+              <th class="py-3 px-4 text-right">Quick Action</th>
+            </tr>
+          </thead>
+          <tbody id="basis-table-body" class="divide-y divide-dark-border font-mono-nums">
+            <tr>
+              <td colspan="6" class="py-8 text-center text-slate-400">Loading live basis opportunities...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 2: Cross-Exchange Spreads -->
+    <div id="tab-content-arbitrage" class="mt-4 hidden">
+      <div class="bg-dark-card border border-dark-border rounded-xl p-4 mb-4 text-xs text-slate-300 leading-relaxed">
+        <strong class="text-white font-semibold flex items-center gap-1 mb-1">
+          <span class="text-cyan-400 text-sm">●</span> Cross-Exchange Delta-Neutral Arbitrage
+        </strong>
+        When Binance and Bybit trade at significantly different funding rates for the same token, you can go <strong>Long on the exchange with the lower rate</strong> and <strong>Short on the exchange with the higher rate</strong>. Both positions cancel out market risk while harvesting the spread difference.
+      </div>
+
+      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
+              <th class="py-3 px-4">Asset</th>
+              <th class="py-3 px-4">Binance 8h</th>
+              <th class="py-3 px-4">Bybit 8h</th>
+              <th class="py-3 px-4">Spread (8h)</th>
+              <th class="py-3 px-4">Spread APR</th>
+              <th class="py-3 px-4">Recommended Strategy</th>
+              <th class="py-3 px-4 text-right">Trade Spreads</th>
+            </tr>
+          </thead>
+          <tbody id="arbitrage-table-body" class="divide-y divide-dark-border font-mono-nums">
+            <tr>
+              <td colspan="7" class="py-8 text-center text-slate-400">Loading cross-exchange spreads...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 3: Full Funding Matrix -->
+    <div id="tab-content-matrix" class="mt-4 hidden">
+      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
+        <table class="w-full text-left border-collapse text-xs sm:text-sm">
+          <thead>
+            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
+              <th class="py-3 px-4">Symbol</th>
+              <th class="py-3 px-4">Mark Price</th>
+              <th class="py-3 px-4">Binance Rate</th>
+              <th class="py-3 px-4">Bybit Rate</th>
+              <th class="py-3 px-4">Annualized APR</th>
+              <th class="py-3 px-4 text-right">Trade Now</th>
+            </tr>
+          </thead>
+          <tbody id="matrix-table-body" class="divide-y divide-dark-border font-mono-nums">
+            <tr>
+              <td colspan="6" class="py-8 text-center text-slate-400">Loading funding matrix...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TAB 4: Yield Calculator -->
+    <div id="tab-content-calculator" class="mt-4 hidden">
+      <div class="bg-dark-card border border-dark-border rounded-xl p-6 max-w-2xl mx-auto glow-box">
+        <h3 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
+          <span>🧮</span> Delta-Neutral Passive Income Calculator
+        </h3>
+        <p class="text-xs text-slate-400 mb-6">Estimate your passive income from crypto funding rates based on position size and annualized APR.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1.5">Capital Amount (USDT)</label>
+            <div class="relative">
+              <span class="absolute left-3 top-2.5 text-slate-500 font-mono">$</span>
+              <input type="number" id="calc-capital" value="10000" class="w-full bg-slate-900 border border-dark-border rounded-lg pl-7 pr-3 py-2 text-sm text-white font-mono-nums focus:outline-none focus:border-emerald-500">
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-slate-300 mb-1.5">Target Annual APR (%)</label>
+            <div class="relative">
+              <input type="number" id="calc-apr" value="25.0" step="0.1" class="w-full bg-slate-900 border border-dark-border rounded-lg px-3 py-2 text-sm text-white font-mono-nums focus:outline-none focus:border-emerald-500">
+              <span class="absolute right-3 top-2.5 text-slate-500 font-mono">%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick APR Presets -->
+        <div class="flex items-center gap-2 mt-3">
+          <span class="text-[11px] text-slate-500">Presets:</span>
+          <button onclick="setCalcApr(12.5)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded">BTC Base (12.5%)</button>
+          <button onclick="setCalcApr(24.0)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded">Altcoin Avg (24%)</button>
+          <button onclick="setCalcApr(50.0)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-400 px-2 py-0.5 rounded">Meme / High Vol (50%)</button>
+        </div>
+
+        <!-- Calculated Returns Box -->
+        <div class="mt-6 pt-6 border-t border-dark-border grid grid-cols-3 gap-3 text-center">
+          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
+            <span class="text-[11px] text-slate-400 block">Daily Yield</span>
+            <span id="calc-result-daily" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$6.85</span>
+          </div>
+          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
+            <span class="text-[11px] text-slate-400 block">Monthly Yield</span>
+            <span id="calc-result-monthly" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$208.33</span>
+          </div>
+          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
+            <span class="text-[11px] text-slate-400 block">Annual Yield</span>
+            <span id="calc-result-annual" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$2,500.00</span>
+          </div>
+        </div>
+
+        <!-- Call to action inside calculator -->
+        <div class="mt-6 text-center">
+          <a id="calc-cta-btn" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 to-teal-600 text-black hover:opacity-95 shadow-lg transition-all">
+            <span>Start Arbitrage on Bybit with 0% Maker Fees</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIP Alert Lead Generation Banner -->
+    <section class="mt-12 bg-gradient-to-br from-slate-900 to-slate-950 border border-dark-border rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden">
+      <div class="max-w-xl mx-auto">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-3">
+          <span>🔔 Free Real-time Alerts</span>
+        </span>
+        <h3 class="text-xl sm:text-2xl font-bold text-white">Never Miss High-Yield Funding Spikes (>50% APR)</h3>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2">Join the Heliosis Telegram bot & channel to get instant automated push alerts whenever an extreme cross-exchange spread opens up.</p>
+        <div class="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a id="telegram-link" href="https://t.me/heliosis_quant" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-cyan-500 hover:bg-cyan-400 text-black transition-all">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 8.16l-2.02 9.53c-.15.68-.56.84-1.12.52l-3.11-2.29-1.5 1.45c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.35-.39-.12l-7.13 4.49-3.08-.96c-.67-.21-.68-.67.14-.99l12.04-4.64c.56-.2 1.05.14.81 1.08z"/></svg>
+            <span>Join Free Telegram VIP Channel</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-dark-border bg-slate-950 py-8 mt-12 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-extrabold text-white text-sm">HELIOSIS.XYZ</span>
+            <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">QUANT TERMINAL</span>
+          </div>
+          <p class="mt-1 text-[11px] text-slate-500">Fully autonomous market intelligence screener powered by GitHub Actions & Cloudflare Pages.</p>
+        </div>
+        <div class="flex items-center gap-4 text-xs">
+          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
+          <a href="#" class="hover:text-slate-300">Affiliate Disclosure</a>
+          <a href="#" class="hover:text-slate-300">Risk Warning</a>
+        </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-dark-border/40 text-[11px] text-slate-600 leading-relaxed text-center md:text-left">
+        <strong>Risk Disclaimer & Affiliate Disclosure:</strong> Cryptocurrency derivatives trading involves substantial risk of loss and is not suitable for every investor. Funding rates fluctuate dynamically every 8 hours and can turn negative. Heliosis Terminal provides informational and analytical tools only and does not provide financial or investment advice. Links on this page may contain affiliate tracking which provides commissions at zero extra cost to you.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./config.js"></script>
+  <script>
+    let rawData = null;
+    let currentTab = 'basis';
+
+    // Apply configuration links dynamically
+    function initAffiliateLinks() {
+      const cfg = window.HELIOSIS_CONFIG || {};
+      const aff = cfg.affiliates || {};
+      
+      const bybitUrl = aff.bybit?.url || "https://www.bybit.com";
+      const binanceUrl = aff.binance?.url || "https://accounts.binance.com";
+      
+      const setHref = (id, url) => {
+        const el = document.getElementById(id);
+        if (el) el.href = url;
+      };
+
+      setHref('nav-bybit-btn', bybitUrl);
+      setHref('nav-binance-btn', binanceUrl);
+      setHref('hero-bybit-btn', bybitUrl);
+      setHref('hero-binance-btn', binanceUrl);
+      setHref('calc-cta-btn', bybitUrl);
+
+      if (cfg.community?.telegramUrl) {
+        setHref('telegram-link', cfg.community.telegramUrl);
+      }
+    }
+
+    // Tab Switching
+    function switchTab(tabId) {
+      currentTab = tabId;
+      const tabs = ['basis', 'arbitrage', 'matrix', 'calculator'];
+      tabs.forEach(t => {
+        const content = document.getElementById(`tab-content-${t}`);
+        const btn = document.getElementById(`tab-btn-${t}`);
+        if (t === tabId) {
+          if (content) content.classList.remove('hidden');
+          if (btn) {
+            btn.className = "px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap";
+          }
+        } else {
+          if (content) content.classList.add('hidden');
+          if (btn) {
+            btn.className = "px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap";
+          }
+        }
+      });
+    }
+
+    // Countdown Clock to Next Funding (Settlements at 00:00, 08:00, 16:00 UTC)
+    function startCountdown() {
+      function update() {
+        const now = new Date();
+        const nowMs = now.getTime();
+        
+        // Find next 8h UTC mark
+        const nowUtcHours = now.getUTCHours();
+        let nextUtcHour;
+        if (nowUtcHours < 8) nextUtcHour = 8;
+        else if (nowUtcHours < 16) nextUtcHour = 16;
+        else nextUtcHour = 24;
+
+        const target = new Date(Date.UTC(
+          now.getUTCFullYear(),
+          now.getUTCMonth(),
+          now.getUTCDate() + (nextUtcHour === 24 ? 1 : 0),
+          nextUtcHour % 24, 0, 0, 0
+        ));
+
+        const diff = Math.max(0, target.getTime() - nowMs);
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        const pad = (n) => String(n).padStart(2, '0');
+        const str = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
+        const el = document.getElementById('settlement-countdown');
+        if (el) el.textContent = str;
+      }
+      setInterval(update, 1000);
+      update();
+    }
+
+    // Format numbers
+    function formatPrice(p) {
+      if (p == null || isNaN(p)) return '--';
+      if (p >= 1000) return '$' + p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      if (p >= 1) return '$' + p.toFixed(4);
+      return '$' + p.toFixed(6);
+    }
+
+    function formatPct(n) {
+      if (n == null || isNaN(n)) return '--';
+      const sign = n > 0 ? '+' : '';
+      return `${sign}${n.toFixed(4)}%`;
+    }
+
+    function formatApr(n) {
+      if (n == null || isNaN(n)) return '--';
+      const sign = n > 0 ? '+' : '';
+      return `${sign}${n.toFixed(2)}%`;
+    }
+
+    // Render Data into UI
+    function renderTables(filter = "") {
+      if (!rawData) return;
+      
+      const q = filter.trim().toUpperCase();
+      const bybitUrl = window.HELIOSIS_CONFIG?.affiliates?.bybit?.url || "https://www.bybit.com";
+      const binanceUrl = window.HELIOSIS_CONFIG?.affiliates?.binance?.url || "https://accounts.binance.com";
+
+      // 1. Basis Table (Cash & Carry)
+      const basisTbody = document.getElementById('basis-table-body');
+      const basisList = (rawData.top_cash_and_carry || []).filter(item => 
+        !q || item.symbol.includes(q) || item.base_asset.includes(q)
+      );
+
+      if (basisList.length === 0) {
+        basisTbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No matching assets found.</td></tr>`;
+      } else {
+        basisTbody.innerHTML = basisList.map(item => `
+          <tr class="hover:bg-slate-800/40 transition-colors">
+            <td class="py-3 px-4 flex items-center gap-2">
+              <span class="font-bold text-white text-sm">${item.base_asset}</span>
+              <span class="text-[10px] text-slate-500 font-sans">PERP</span>
+            </td>
+            <td class="py-3 px-4 text-slate-300">${formatPrice(item.price)}</td>
+            <td class="py-3 px-4 font-semibold text-emerald-400">${formatPct(item.avg_rate_8h_pct)}</td>
+            <td class="py-3 px-4 font-bold text-emerald-400 glow-green text-sm">${formatApr(item.apr_pct)}</td>
+            <td class="py-3 px-4 text-slate-400 text-xs">${formatApr(item.apy_pct)}</td>
+            <td class="py-3 px-4 text-right">
+              <a href="${bybitUrl}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-all">
+                <span>Earn Yield</span> →
+              </a>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      // 2. Cross-Exchange Arbitrage Table
+      const arbTbody = document.getElementById('arbitrage-table-body');
+      const arbList = (rawData.top_arbitrage_spreads || []).filter(item => 
+        !q || item.symbol.includes(q) || item.base_asset.includes(q)
+      );
+
+      if (arbList.length === 0) {
+        arbTbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-slate-500">No active arbitrage spreads found.</td></tr>`;
+      } else {
+        arbTbody.innerHTML = arbList.map(item => `
+          <tr class="hover:bg-slate-800/40 transition-colors">
+            <td class="py-3 px-4">
+              <span class="font-bold text-white text-sm">${item.base_asset}</span>
+            </td>
+            <td class="py-3 px-4 ${item.binance_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+              ${formatPct(item.binance_rate_pct)}
+            </td>
+            <td class="py-3 px-4 ${item.bybit_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+              ${formatPct(item.bybit_rate_pct)}
+            </td>
+            <td class="py-3 px-4 font-bold text-cyan-400">${item.spread_8h_pct.toFixed(4)}%</td>
+            <td class="py-3 px-4 font-bold text-cyan-400 text-sm">${formatApr(item.spread_apr_pct)}</td>
+            <td class="py-3 px-4">
+              <span class="text-[10px] font-sans font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-200 border border-slate-700">
+                ${item.strategy}
+              </span>
+            </td>
+            <td class="py-3 px-4 text-right">
+              <a href="${bybitUrl}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30 transition-all">
+                <span>Trade</span> →
+              </a>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      // 3. Matrix Table
+      const matrixTbody = document.getElementById('matrix-table-body');
+      const fullList = (rawData.all_pairs || []).filter(item => 
+        !q || item.symbol.includes(q) || item.base_asset.includes(q)
+      );
+
+      if (fullList.length === 0) {
+        matrixTbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No coins match search query.</td></tr>`;
+      } else {
+        matrixTbody.innerHTML = fullList.map(item => `
+          <tr class="hover:bg-slate-800/40 transition-colors">
+            <td class="py-3 px-4 font-bold text-white">${item.symbol}</td>
+            <td class="py-3 px-4 text-slate-300">${formatPrice(item.price)}</td>
+            <td class="py-3 px-4 ${item.binance_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+              ${formatPct(item.binance_rate_pct)}
+            </td>
+            <td class="py-3 px-4 ${item.bybit_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+              ${formatPct(item.bybit_rate_pct)}
+            </td>
+            <td class="py-3 px-4 font-bold ${item.apr_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
+              ${formatApr(item.apr_pct)}
+            </td>
+            <td class="py-3 px-4 text-right">
+              <a href="${bybitUrl}" target="_blank" class="text-[11px] text-slate-400 hover:text-white underline">
+                Trade
+              </a>
+            </td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    // Load Data from JSON
+    async function loadMarketData() {
+      const spinner = document.getElementById('refresh-spinner');
+      if (spinner) spinner.classList.add('animate-spin');
+
+      try {
+        const resp = await fetch('./data/latest.json?v=' + Date.now());
+        if (!resp.ok) throw new Error("Could not fetch data/latest.json");
+        rawData = await resp.json();
+
+        // Update Top Stats
+        const summary = rawData.market_summary || {};
+        document.getElementById('stat-sentiment').textContent = summary.sentiment?.split(' ')[0] || 'NEUTRAL';
+        document.getElementById('stat-pos-count').textContent = summary.positive_funding_pairs || 0;
+        document.getElementById('stat-neg-count').textContent = summary.negative_funding_pairs || 0;
+        
+        if (summary.highest_basis_apr) {
+          document.getElementById('stat-top-basis-apr').textContent = `+${summary.highest_basis_apr.apr_pct}%`;
+          document.getElementById('stat-top-basis-sym').textContent = summary.highest_basis_apr.base_asset;
+        }
+
+        if (summary.highest_arbitrage_spread) {
+          document.getElementById('stat-top-arb-apr').textContent = `+${summary.highest_arbitrage_spread.spread_apr_pct}%`;
+          document.getElementById('stat-top-arb-sym').textContent = summary.highest_arbitrage_spread.base_asset;
+        }
+
+        if (rawData.metadata?.updated_at_utc) {
+          document.getElementById('stat-updated-time').textContent = `Updated: ${rawData.metadata.updated_at_utc}`;
+        }
+
+        renderTables(document.getElementById('symbol-search').value);
+      } catch (err) {
+        console.error("Error loading data:", err);
+      } finally {
+        if (spinner) spinner.classList.remove('animate-spin');
+      }
+    }
+
+    // Yield Calculator logic
+    function updateCalculator() {
+      const capital = parseFloat(document.getElementById('calc-capital').value) || 0;
+      const apr = parseFloat(document.getElementById('calc-apr').value) || 0;
+
+      const annual = capital * (apr / 100);
+      const monthly = annual / 12;
+      const daily = annual / 365;
+
+      const fmt = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('calc-result-daily').textContent = fmt(daily);
+      document.getElementById('calc-result-monthly').textContent = fmt(monthly);
+      document.getElementById('calc-result-annual').textContent = fmt(annual);
+    }
+
+    function setCalcApr(val) {
+      document.getElementById('calc-apr').value = val;
+      updateCalculator();
+    }
+
+    // Event Listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      initAffiliateLinks();
+      startCountdown();
+      loadMarketData();
+
+      document.getElementById('refresh-data-btn').addEventListener('click', loadMarketData);
+      document.getElementById('symbol-search').addEventListener('input', (e) => {
+        renderTables(e.target.value);
+      });
+
+      document.getElementById('calc-capital').addEventListener('input', updateCalculator);
+      document.getElementById('calc-apr').addEventListener('input', updateCalculator);
+      updateCalculator();
+
+      // Auto-reload data every 3 minutes
+      setInterval(loadMarketData, 180000);
+    });
+  </script>
+</body>
+</html>
