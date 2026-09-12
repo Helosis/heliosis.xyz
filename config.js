@@ -17,11 +17,10 @@ window.HELIOSIS_CONFIG = {
     bybit: {
       name: "Bybit",
       enabled: true,
-      tagline: "VIP 0% Maker Fees + Up to $30,000 Deposit Bonus",
+      tagline: "VIP 0% Maker Fees + Up to $6,135 USDT Bonuses",
       badge: "Highest Liquidity",
-      referralCode: "HELIOSIS",
-      // Replace with your full affiliate link:
-      url: "https://www.bybit.com/register?affiliate_id=HELIOSIS"
+      referralCode: "71XNO1",
+      url: "https://www.bybit.com/invite?ref=71XNO1&medium=referral&utm_campaign=evergreen"
     },
     binance: {
       name: "Binance",
