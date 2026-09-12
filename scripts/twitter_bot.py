@@ -22,11 +22,23 @@ if sys.platform == "win32":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="replace")
 
-# Environment variables for Twitter API keys
-API_KEY = os.environ.get("TWITTER_API_KEY", "").strip()
-API_SECRET = os.environ.get("TWITTER_API_SECRET", "").strip()
-ACCESS_TOKEN = os.environ.get("TWITTER_ACCESS_TOKEN", "").strip()
-ACCESS_TOKEN_SECRET = os.environ.get("TWITTER_ACCESS_TOKEN_SECRET", "").strip()
+# Load .env if present
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.dirname(script_dir)
+env_path = os.path.join(project_root, ".env")
+if os.path.exists(env_path):
+    with open(env_path, "r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                k, v = line.split("=", 1)
+                os.environ.setdefault(k.strip(), v.strip())
+
+# Environment variables for Twitter API keys (with defaults)
+API_KEY = os.environ.get("TWITTER_API_KEY", "hRZAUWTityj7TXqAdrwos8CIE").strip()
+API_SECRET = os.environ.get("TWITTER_API_SECRET", "HZec2M2Qf9yaB86XFe8pqc8u1y3s8zTskOqsfJnqGUGIoe0L6s").strip()
+ACCESS_TOKEN = os.environ.get("TWITTER_ACCESS_TOKEN", "2096014984878710785-aePUpWgva6X29N8ytksIGbZw5zbf9u").strip()
+ACCESS_TOKEN_SECRET = os.environ.get("TWITTER_ACCESS_TOKEN_SECRET", "XxW0lwxcIKQfFb1negZ0tuxeZd1a0JxqN5K82NusRoH5U").strip()
 
 # Site & Referral Constants
 SITE_URL = "https://heliosis.xyz"
@@ -82,6 +94,24 @@ def post_tweet(tweet_text):
         return True
 
     url = "https://api.twitter.com/2/tweets"
+
+    # Prefer requests_oauthlib if available
+    try:
+        import requests
+        from requests_oauthlib import OAuth1
+        auth = OAuth1(API_KEY, API_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+        resp = requests.post(url, auth=auth, json={"text": tweet_text}, timeout=15)
+        if resp.status_code == 201:
+            data = resp.json()
+            print(f"[SUCCESS] Tweet posted! ID: {data.get('data', {}).get('id')}")
+            return True
+        else:
+            print(f"[ERROR] Twitter API returned status {resp.status_code}: {resp.text}", file=sys.stderr)
+            return False
+    except ImportError:
+        pass
+
+    # Fallback to standard library
     payload = json.dumps({"text": tweet_text}).encode("utf-8")
     auth_header = generate_oauth_header("POST", url)
 
@@ -109,6 +139,7 @@ def post_tweet(tweet_text):
             except Exception:
                 pass
         return False
+
 
 def format_arbitrage_tweet(opp):
     """Construct an engaging high-converting crypto tweet (<280 chars)."""
