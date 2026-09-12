@@ -25,11 +25,10 @@ window.HELIOSIS_CONFIG = {
     binance: {
       name: "Binance",
       enabled: true,
-      tagline: "20% Lifetime Fee Rebate + Spot & Futures",
+      tagline: "100 USDT Fee Rebate Voucher + Lifetime Kickback",
       badge: "World #1 Volume",
-      referralCode: "HELIOSIS",
-      // Replace with your full affiliate link:
-      url: "https://accounts.binance.com/register?ref=HELIOSIS"
+      referralCode: "CPA_00M822DCVK",
+      url: "https://www.binance.com/activity/referral-entry/CPA?ref=CPA_00M822DCVK"
     },
     okx: {
       name: "OKX",
