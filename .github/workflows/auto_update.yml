@@ -30,7 +30,7 @@ jobs:
           git config --global user.name "Heliosis Autonomous Bot"
           git config --global user.email "bot@heliosis.xyz"
           git add data/latest.json
-          git diff --staged --quiet || (git commit -m "Auto-update market data [skip ci]" && git push)
+          git diff --staged --quiet || (git commit -m "Auto-update market data" && git push)
 
       - name: Post market alert tweet to Twitter (X)
         env:
