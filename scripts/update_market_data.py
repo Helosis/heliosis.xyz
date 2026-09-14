@@ -225,6 +225,10 @@ def build_dataset():
 def main():
     dataset = build_dataset()
     
+    if dataset["metadata"]["total_pairs_tracked"] == 0:
+        print("[ERROR] No market data fetched (possible geo-block/timeout)! Aborting write to protect data/latest.json.")
+        sys.exit(1)
+        
     script_dir = os.path.dirname(os.path.abspath(__file__))
     project_root = os.path.dirname(script_dir)
     data_dir = os.path.join(project_root, "data")
