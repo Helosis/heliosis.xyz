@@ -1,9 +1,10 @@
 name: Autonomous Market Data Updater
 
+# on:
+#   schedule:
+#     # Runs every hour at minute 5 (UTC) - Disabled: Cloud datacenter IPs are blocked by Binance/Bybit
+#     - cron: '5 * * * *'
 on:
-  schedule:
-    # Runs every hour at minute 5 (UTC)
-    - cron: '5 * * * *'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:
