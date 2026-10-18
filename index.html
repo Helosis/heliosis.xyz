@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-  <title>Heliosis IPTV Hub | Reklamsız Full & Pro IPTV APK İndirme Merkezi</title>
-  <meta name="description" content="HeliosisTV Resmi APK ve tüm popüler IPTV oynatıcılarının en güncel reklamsız Pro/Premium full mod sürümleri. Firestick, Android TV ve Box için tek tıkla doğrudan APK indir.">
-  <meta name="keywords" content="heliosistv apk, iptv apk indir, tivimate premium mod, iptv smarters pro full apk, xciptv pro, kodi 21 apk, reklamsız iptv apk">
+  <title>Heliosis IPTV Hub | Android TV & Box Kumanda Uyumlu APK Portalı</title>
+  <meta name="description" content="HeliosisTV Resmi APK ve tüm popüler IPTV oynatıcılarının en güncel reklamsız Pro/Premium sürümleri. Android TV, Android Box ve Firestick kumanda D-Pad tam destekli.">
+  <meta name="keywords" content="heliosistv apk, android tv iptv kumanda, android box iptv apk, tivimate premium mod, iptv smarters pro full apk, xciptv pro, kodi 21 apk">
   <meta name="author" content="Heliosis">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://heliosis.xyz/">
@@ -15,8 +15,8 @@
 
   <!-- OpenGraph -->
   <meta property="og:site_name" content="Heliosis IPTV Hub">
-  <meta property="og:title" content="Heliosis IPTV Hub | Reklamsız Full & Pro IPTV APK İndir">
-  <meta property="og:description" content="HeliosisTV Resmi APK ve en popüler IPTV oynatıcılarının demo olmayan, reklamsız Pro/Full sürümleri. Tek tıkla doğrudan APK indir.">
+  <meta property="og:title" content="Heliosis IPTV Hub | TV Kumanda Destekli Doğrudan APK İndir">
+  <meta property="og:description" content="HeliosisTV Resmi APK ve en popüler IPTV oynatıcılarının demo olmayan, reklamsız Pro/Full sürümleri. Android TV & Box kumandasıyla tek tıkla indir.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://heliosis.xyz/">
   <meta property="og:image" content="https://heliosis.xyz/icon.png">
@@ -66,6 +66,22 @@
     .card-transition:active {
       transform: scale(0.985);
     }
+    
+    /* 🎮 Android TV & Box Remote Control (D-Pad) Focus Styles */
+    .tv-focusable:focus,
+    .tv-focusable.tv-focused {
+      outline: 3px solid #f59e0b !important;
+      outline-offset: 3px !important;
+      transform: scale(1.025) !important;
+      box-shadow: 0 0 28px rgba(245, 158, 11, 0.65), 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+      z-index: 50 !important;
+    }
+    .tv-btn-focused {
+      outline: 3px solid #10b981 !important;
+      outline-offset: 2px !important;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.7) !important;
+      transform: scale(1.06) !important;
+    }
   </style>
 </head>
 <body class="min-h-screen bg-[#eceef1] text-slate-900 dark:bg-[#0a0d14] dark:text-slate-100 transition-colors duration-200">
@@ -74,14 +90,14 @@
   <header class="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-8">
     <div class="max-w-[580px] mx-auto flex items-center justify-between">
       <!-- Left Logo Pill -->
-      <a href="https://heliosis.xyz" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-xs font-semibold tracking-wide text-slate-800 dark:text-slate-200 hover:opacity-85 transition">
+      <a href="https://heliosis.xyz" tabindex="0" class="tv-focusable flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-xs font-semibold tracking-wide text-slate-800 dark:text-slate-200 hover:opacity-85 transition">
         <img src="icon.png" alt="Heliosis" class="w-5 h-5 rounded-full object-contain">
         <span>heliosis.xyz</span>
       </a>
 
       <!-- Right Action Controls (Theme Toggle & Share) -->
       <div class="flex items-center gap-2">
-        <button id="themeToggleBtn" aria-label="Temayı Değiştir" class="p-2 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition">
+        <button id="themeToggleBtn" tabindex="0" aria-label="Temayı Değiştir" class="tv-focusable p-2 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition">
           <!-- Sun Icon (for dark mode) -->
           <svg id="sunIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
@@ -92,7 +108,7 @@
           </svg>
         </button>
 
-        <button id="mainShareBtn" aria-label="Paylaş" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <button id="mainShareBtn" tabindex="0" aria-label="Paylaş" class="tv-focusable flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/85 dark:bg-slate-900/85 backdrop-blur-md border border-slate-300/70 dark:border-slate-800 shadow-sm text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
           <svg class="w-4 h-4 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
           </svg>
@@ -107,6 +123,19 @@
     
     <!-- Profile Header (Linktree Style) -->
     <div class="flex flex-col items-center text-center mb-6">
+      
+      <!-- TV Remote Helper Pill -->
+      <div id="tvRemoteBanner" class="w-full bg-slate-900/90 text-amber-400 border border-amber-500/40 rounded-xl px-3 py-2 mb-3.5 flex items-center justify-between text-xs font-bold shadow-md">
+        <div class="flex items-center gap-2">
+          <span class="text-base">🎮</span>
+          <span class="tracking-wide">TV Kumanda Desteği Aktif</span>
+        </div>
+        <div class="text-[11px] text-slate-300 font-mono flex items-center gap-2">
+          <span class="bg-slate-800 px-1.5 py-0.5 rounded border border-slate-700">▲▼ Gezin</span>
+          <span class="bg-amber-500 text-slate-950 font-black px-1.5 py-0.5 rounded">OK İndir</span>
+        </div>
+      </div>
+
       <!-- Profile Avatar -->
       <div class="relative group cursor-pointer mb-3">
         <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-orange-400 to-amber-200 shadow-xl shadow-amber-500/20">
@@ -130,7 +159,7 @@
 
       <!-- Description -->
       <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 max-w-md leading-relaxed font-medium">
-        Demo olmayan, <strong class="text-emerald-600 dark:text-emerald-400 font-extrabold">100% Reklamsız Full & Pro Mod</strong> IPTV oynatıcıları ve kendi resmi <strong class="text-amber-500 font-extrabold">HeliosisTV</strong> uygulamamızın doğrudan tek tıkla APK indirme merkezi.
+        Android TV, Android Box ve Firestick uyumlu <strong class="text-emerald-600 dark:text-emerald-400 font-extrabold">100% Reklamsız Full & Pro Mod</strong> IPTV oynatıcıları ve resmi <strong class="text-amber-500 font-extrabold">HeliosisTV</strong> APK doğrudan indirme merkezi.
       </p>
 
       <!-- Direct Downloader Banner for Firestick & TV -->
@@ -151,7 +180,7 @@
             </div>
           </div>
         </div>
-        <button onclick="copyToClipboard('https://heliosis.xyz/heliosistv.apk', 'HeliosisTV doğrudan APK bağlantısı kopyalandı!')" class="shrink-0 px-3.5 py-2 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-xs rounded-xl shadow-md transition">
+        <button id="downloaderCopyBtn" tabindex="0" onclick="copyToClipboard('https://heliosis.xyz/heliosistv.apk', 'HeliosisTV doğrudan APK bağlantısı kopyalandı!')" class="tv-focusable shrink-0 px-3.5 py-2 bg-amber-500 hover:bg-amber-400 active:scale-95 text-slate-950 font-extrabold text-xs rounded-xl shadow-md transition">
           Kopyala
         </button>
       </div>
@@ -165,12 +194,12 @@
         <span>•</span>
         <span class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          Demo Değil (Full & Pro Mod)
+          Demo Değil (Full Mod)
         </span>
         <span>•</span>
         <span class="flex items-center gap-1 text-emerald-600 dark:text-emerald-400">
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
-          Tek Tıkla Doğrudan İndirme
+          Kumanda D-Pad Uyumlu
         </span>
       </div>
 
@@ -180,8 +209,9 @@
           <input 
             type="text" 
             id="searchInput" 
+            tabindex="0"
             placeholder="IPTV uygulaması ara (HeliosisTV, TiviMate, Smarters, Kodi...)" 
-            class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm font-medium"
+            class="tv-focusable w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl text-sm text-slate-900 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm font-medium"
           >
           <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
@@ -189,13 +219,13 @@
         </div>
 
         <!-- Filter Category Pills -->
-        <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
-          <button class="filter-btn active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-amber-500 text-slate-950 shadow-sm" data-cat="all">Tümü (18)</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="helios">⭐ Kendi Programımız</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="pro">🔥 Pro Modlar (Reklamsız)</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="alternative">📺 Alternatif Oynatıcılar</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="kodi">🎬 Kodi Medya</button>
-          <button class="filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="tools">🛠️ TV Araçları</button>
+        <div id="categoryContainer" class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
+          <button tabindex="0" class="filter-btn tv-focusable active px-3.5 py-1.5 rounded-full text-xs font-bold whitespace-nowrap bg-amber-500 text-slate-950 shadow-sm" data-cat="all">Tümü (18)</button>
+          <button tabindex="0" class="filter-btn tv-focusable px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="helios">⭐ Kendi Programımız</button>
+          <button tabindex="0" class="filter-btn tv-focusable px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="pro">🔥 Pro Modlar (Reklamsız)</button>
+          <button tabindex="0" class="filter-btn tv-focusable px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="alternative">📺 Alternatif Oynatıcılar</button>
+          <button tabindex="0" class="filter-btn tv-focusable px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="kodi">🎬 Kodi Medya</button>
+          <button tabindex="0" class="filter-btn tv-focusable px-3.5 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="tools">🛠️ TV Araçları</button>
         </div>
       </div>
     </div>
@@ -209,18 +239,18 @@
     <div id="emptyState" class="hidden text-center py-12">
       <div class="text-4xl mb-2">🔍</div>
       <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Aradığınız kriterlere uygun IPTV uygulaması bulunamadı.</p>
-      <button onclick="clearSearch()" class="mt-3 px-4 py-1.5 text-xs font-bold text-amber-500 border border-amber-500 rounded-xl hover:bg-amber-500 hover:text-slate-950 transition">Filtreyi Temizle</button>
+      <button tabindex="0" onclick="clearSearch()" class="tv-focusable mt-3 px-4 py-1.5 text-xs font-bold text-amber-500 border border-amber-500 rounded-xl hover:bg-amber-500 hover:text-slate-950 transition">Filtreyi Temizle</button>
     </div>
 
     <!-- Footer -->
     <footer class="mt-12 text-center text-xs text-slate-500 dark:text-slate-400 space-y-2">
       <div class="flex items-center justify-center gap-2">
-        <a href="https://heliosis.xyz" class="hover:underline font-bold text-slate-800 dark:text-slate-200">heliosis.xyz</a>
+        <a href="https://heliosis.xyz" tabindex="0" class="tv-focusable hover:underline font-bold text-slate-800 dark:text-slate-200">heliosis.xyz</a>
         <span>•</span>
         <span class="text-amber-500 font-bold">HeliosisTV Ecosystem</span>
       </div>
       <p class="text-[11px] text-slate-400 dark:text-slate-500 max-w-sm mx-auto">
-        Tüm APK'lar doğrulanmış, demo olmayan, reklamsız doğrudan .apk dosyasıdır. Tek tıkla cihazınıza iner.
+        Tüm APK'lar doğrulanmış, demo olmayan, reklamsız doğrudan .apk dosyasıdır. Android TV & Box kumandası ile tek tıkla cihazınıza iner.
       </p>
     </footer>
 
@@ -562,14 +592,22 @@
       emptyEl.classList.add('hidden');
 
       let html = '';
-      filtered.forEach(item => {
+      filtered.forEach((item, index) => {
         const isHelios = item.category === 'helios';
         const containerClasses = isHelios
           ? 'bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent dark:from-amber-500/25 dark:via-amber-500/10 dark:to-transparent border-2 border-amber-500/80 dark:border-amber-500 shadow-lg shadow-amber-500/15'
           : 'bg-white dark:bg-slate-900 border border-slate-300/80 dark:border-slate-800 hover:border-emerald-500/60 dark:hover:border-emerald-500/60 shadow-sm';
 
         html += `
-          <div class="relative group card-transition rounded-2xl ${containerClasses} p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer" onclick="triggerDownload('${item.url}', '${item.filename}')">
+          <div 
+            tabindex="0"
+            data-tv-item="card"
+            data-tv-index="${index}"
+            data-url="${item.url}"
+            data-filename="${item.filename}"
+            class="tv-focusable relative group card-transition rounded-2xl ${containerClasses} p-3 sm:p-3.5 flex items-center justify-between gap-3 cursor-pointer" 
+            onclick="triggerDownload('${item.url}', '${item.filename}')"
+          >
             <!-- Left Info Area -->
             <div class="flex items-center gap-3.5 min-w-0 flex-1">
               <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
@@ -612,9 +650,10 @@
             <div class="flex items-center gap-1.5 shrink-0" onclick="event.stopPropagation()">
               <!-- Prominent Direct Download Button -->
               <button 
+                tabindex="-1"
                 onclick="triggerDownload('${item.url}', '${item.filename}')"
                 title="Tek Tıkla Doğrudan İndir (.apk)"
-                class="flex items-center gap-1.5 px-3 py-2 rounded-xl ${isHelios ? 'bg-amber-500 text-slate-950 font-black hover:bg-amber-400' : 'bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold'} text-xs shadow-md transition active:scale-95"
+                class="flex items-center gap-1.5 px-3.5 py-2 rounded-xl ${isHelios ? 'bg-amber-500 text-slate-950 font-black hover:bg-amber-400' : 'bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold'} text-xs shadow-md transition active:scale-95"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
@@ -624,9 +663,11 @@
 
               <!-- Copy Link Button -->
               <button 
+                tabindex="0"
+                data-tv-item="copy-btn"
                 onclick="copyToClipboard('${item.url}', '${item.title} doğrudan indirme bağlantısı kopyalandı!')"
                 title="Doğrudan APK URL'sini Kopyala"
-                class="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+                class="tv-focusable p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition"
               >
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
@@ -710,7 +751,7 @@
       if (navigator.share) {
         navigator.share({
           title: 'Heliosis IPTV Hub',
-          text: 'Reklamsız Full & Pro IPTV APK Doğrudan İndirme Merkezi - Firestick & Android TV',
+          text: 'Reklamsız Full & Pro IPTV APK Doğrudan İndirme Merkezi - Firestick & Android TV Kumanda Uyumlu',
           url: window.location.href,
         }).catch(() => {});
       } else {
@@ -741,6 +782,188 @@
 
     // Initial Render
     renderCards();
+
+    /* ==========================================================================
+       🎮 ANDROID TV & ANDROID BOX REMOTE CONTROL (D-PAD SPATIAL NAVIGATION)
+       Full Key Codes: DPAD_UP(19/38), DPAD_DOWN(20/40), DPAD_LEFT(21/37),
+       DPAD_RIGHT(22/39), DPAD_CENTER/OK(23/13/66/32), BACK(4/27/8)
+       ========================================================================== */
+    (function initTVRemoteNavigation() {
+      // Focus helper with smooth centering
+      function setTVFocus(el) {
+        if (!el) return;
+        el.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+      }
+
+      // Check if Android TV or Box user agent
+      const ua = navigator.userAgent.toLowerCase();
+      const isTV = ua.includes('tv') || ua.includes('aft') || ua.includes('box') || ua.includes('crkey') || ua.includes('smarttv') || ua.includes('large screen');
+      if (isTV) {
+        // Auto focus first category or first card on TV load
+        setTimeout(() => {
+          const firstCard = document.querySelector('[data-tv-item="card"]');
+          if (firstCard) setTVFocus(firstCard);
+        }, 400);
+      }
+
+      window.addEventListener('keydown', function(e) {
+        const key = e.key;
+        const keyCode = e.keyCode || e.which;
+
+        // Key Identifiers
+        const isUp = key === 'ArrowUp' || keyCode === 38 || keyCode === 19;
+        const isDown = key === 'ArrowDown' || keyCode === 40 || keyCode === 20;
+        const isLeft = key === 'ArrowLeft' || keyCode === 37 || keyCode === 21;
+        const isRight = key === 'ArrowRight' || keyCode === 39 || keyCode === 22;
+        const isOK = key === 'Enter' || key === ' ' || keyCode === 13 || keyCode === 23 || keyCode === 66 || keyCode === 32;
+        const isBack = key === 'Escape' || key === 'Backspace' || keyCode === 27 || keyCode === 4 || keyCode === 8;
+
+        if (!isUp && !isDown && !isLeft && !isRight && !isOK && !isBack) {
+          return; // Ignore other keys
+        }
+
+        const activeEl = document.activeElement;
+        const isInputFocused = activeEl && activeEl.id === 'searchInput';
+
+        // BACK KEY
+        if (isBack) {
+          if (isInputFocused && activeEl.value) {
+            e.preventDefault();
+            clearSearch();
+            const firstPill = document.querySelector('.filter-btn');
+            if (firstPill) setTVFocus(firstPill);
+            return;
+          }
+          const activePill = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
+          if (activePill) {
+            e.preventDefault();
+            setTVFocus(activePill);
+          }
+          return;
+        }
+
+        // If inside search input and pressing DOWN, move to categories
+        if (isInputFocused) {
+          if (isDown) {
+            e.preventDefault();
+            const activePill = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
+            setTVFocus(activePill);
+          } else if (isUp) {
+            e.preventDefault();
+            const copyBtn = document.getElementById('downloaderCopyBtn');
+            setTVFocus(copyBtn);
+          }
+          return;
+        }
+
+        // If nothing focusable is currently active, start at first card or active category
+        if (!activeEl || !activeEl.classList.contains('tv-focusable')) {
+          e.preventDefault();
+          const firstCard = document.querySelector('[data-tv-item="card"]');
+          setTVFocus(firstCard || document.getElementById('searchInput'));
+          return;
+        }
+
+        // DOWN KEY NAVIGATION
+        if (isDown) {
+          e.preventDefault();
+          if (activeEl.id === 'themeToggleBtn' || activeEl.id === 'mainShareBtn') {
+            setTVFocus(document.getElementById('downloaderCopyBtn'));
+          } else if (activeEl.id === 'downloaderCopyBtn') {
+            setTVFocus(document.getElementById('searchInput'));
+          } else if (activeEl.classList.contains('filter-btn')) {
+            const firstCard = document.querySelector('[data-tv-item="card"]');
+            setTVFocus(firstCard);
+          } else if (activeEl.getAttribute('data-tv-item') === 'card' || activeEl.getAttribute('data-tv-item') === 'copy-btn') {
+            // Find current card index
+            const currentCard = activeEl.closest('[data-tv-item="card"]');
+            const currentIndex = parseInt(currentCard.getAttribute('data-tv-index'), 10);
+            const nextCard = document.querySelector(`[data-tv-item="card"][data-tv-index="${currentIndex + 1}"]`);
+            if (nextCard) {
+              setTVFocus(nextCard);
+            }
+          }
+          return;
+        }
+
+        // UP KEY NAVIGATION
+        if (isUp) {
+          e.preventDefault();
+          if (activeEl.getAttribute('data-tv-item') === 'card' || activeEl.getAttribute('data-tv-item') === 'copy-btn') {
+            const currentCard = activeEl.closest('[data-tv-item="card"]');
+            const currentIndex = parseInt(currentCard.getAttribute('data-tv-index'), 10);
+            if (currentIndex > 0) {
+              const prevCard = document.querySelector(`[data-tv-item="card"][data-tv-index="${currentIndex - 1}"]`);
+              if (prevCard) setTVFocus(prevCard);
+            } else {
+              // Reached first card, move up to active category pill
+              const activePill = document.querySelector('.filter-btn.active') || document.querySelector('.filter-btn');
+              setTVFocus(activePill);
+            }
+          } else if (activeEl.classList.contains('filter-btn')) {
+            setTVFocus(document.getElementById('searchInput'));
+          } else if (activeEl.id === 'searchInput') {
+            setTVFocus(document.getElementById('downloaderCopyBtn'));
+          } else if (activeEl.id === 'downloaderCopyBtn') {
+            setTVFocus(document.getElementById('themeToggleBtn'));
+          }
+          return;
+        }
+
+        // LEFT / RIGHT NAVIGATION
+        if (isLeft || isRight) {
+          // On Category Pills: shift pill and activate it instantly
+          if (activeEl.classList.contains('filter-btn')) {
+            e.preventDefault();
+            const pills = Array.from(document.querySelectorAll('.filter-btn'));
+            const currentIdx = pills.indexOf(activeEl);
+            let targetIdx = isRight ? currentIdx + 1 : currentIdx - 1;
+            if (targetIdx >= 0 && targetIdx < pills.length) {
+              pills[targetIdx].click();
+              setTVFocus(pills[targetIdx]);
+            }
+            return;
+          }
+
+          // On Cards: switch between Card itself and Copy button
+          if (activeEl.getAttribute('data-tv-item') === 'card' && isRight) {
+            e.preventDefault();
+            const copyBtn = activeEl.querySelector('[data-tv-item="copy-btn"]');
+            if (copyBtn) setTVFocus(copyBtn);
+            return;
+          }
+          if (activeEl.getAttribute('data-tv-item') === 'copy-btn' && isLeft) {
+            e.preventDefault();
+            const parentCard = activeEl.closest('[data-tv-item="card"]');
+            if (parentCard) setTVFocus(parentCard);
+            return;
+          }
+
+          // On Top bar buttons
+          if (activeEl.id === 'themeToggleBtn' && isRight) {
+            e.preventDefault();
+            setTVFocus(document.getElementById('mainShareBtn'));
+            return;
+          }
+          if (activeEl.id === 'mainShareBtn' && isLeft) {
+            e.preventDefault();
+            setTVFocus(document.getElementById('themeToggleBtn'));
+            return;
+          }
+        }
+
+        // OK / ENTER KEY (Center D-Pad)
+        if (isOK) {
+          if (activeEl.getAttribute('data-tv-item') === 'card') {
+            e.preventDefault();
+            const url = activeEl.getAttribute('data-url');
+            const filename = activeEl.getAttribute('data-filename');
+            triggerDownload(url, filename);
+          }
+        }
+      });
+    })();
   </script>
 </body>
 </html>
