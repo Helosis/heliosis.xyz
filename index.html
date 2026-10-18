@@ -1,94 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="tr" class="dark">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Heliosis Terminal | Live Crypto Funding Rates, Basis Yields & Arbitrage</title>
-  <meta name="description" content="Autonomous crypto funding rates screener & delta-neutral basis arbitrage terminal. Real-time funding rates from Binance & Bybit, annualized APR calculations, and spread arbitrage opportunities.">
-  <meta name="keywords" content="crypto funding rates, funding rate arbitrage, cash and carry crypto, binance funding rates, bybit funding rates, delta neutral yield, crypto apr, heliosis terminal">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <title>Heliosis IPTV Hub | En Popüler IPTV APK İndirme Merkezi</title>
+  <meta name="description" content="Tüm popüler IPTV oynatıcıları ve canlı TV APK indirme merkezi. Firestick, Android TV, TV Box ve telefonlar için TiviMate, IPTV Smarters Pro, XCIPTV, Kodi ve Heliosis IPTV APK doğrudan indirin.">
+  <meta name="keywords" content="iptv apk, tivimate apk, iptv smarters pro apk, xciptv apk, kodi apk, heliosis iptv, firestick iptv indir, android tv iptv apk">
   <meta name="author" content="Heliosis">
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://heliosis.xyz/">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" href="icon.png">
+  <link rel="apple-touch-icon" href="icon.png">
   <meta name="theme-color" content="#090d16">
-  
-  <!-- OpenGraph / Facebook -->
-  <meta property="og:site_name" content="Heliosis Terminal">
-  <meta property="og:title" content="Heliosis Terminal | Crypto Funding Rates & Basis Arbitrage Screener">
-  <meta property="og:description" content="Real-time crypto funding rates, cash & carry delta-neutral APRs, and Binance vs Bybit cross-exchange arbitrage opportunities. Updated hourly.">
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:site_name" content="Heliosis IPTV Hub">
+  <meta property="og:title" content="Heliosis IPTV Hub | En Popüler IPTV APK İndirme Merkezi">
+  <meta property="og:description" content="Tüm popüler IPTV oynatıcıları ve canlı TV APK indirme merkezi. Firestick, Android TV ve TV Box uyumlu doğrudan APK indirme bağlantıları.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://heliosis.xyz/">
-  <meta property="og:image" content="https://heliosis.xyz/favicon.svg">
-  
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@heliosis_xyz">
-  <meta name="twitter:title" content="Heliosis Terminal | Crypto Funding Rates & Basis Arbitrage">
-  <meta name="twitter:description" content="Autonomous real-time screener for Binance & Bybit crypto funding rates, delta-neutral basis yields, and spread arbitrage.">
-  <meta name="twitter:image" content="https://heliosis.xyz/favicon.svg">
+  <meta property="og:image" content="https://heliosis.xyz/icon.png">
 
-  <!-- JSON-LD Structured Data for Google Rich Snippets -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "@id": "https://heliosis.xyz/#app",
-        "name": "Heliosis Terminal",
-        "url": "https://heliosis.xyz/",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "All",
-        "description": "Autonomous crypto funding rates screener, cash & carry basis arbitrage calculator, and real-time cross-exchange spreads between Binance and Bybit.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://heliosis.xyz/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is Crypto Funding Rate Arbitrage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Funding rate arbitrage is a delta-neutral trading strategy where a trader captures funding payments exchanged between long and short perpetual futures traders, without directional exposure to token price fluctuations."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does Cash and Carry Arbitrage work in crypto?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "In cash and carry arbitrage, an investor buys the spot cryptocurrency and simultaneously opens an equal-sized 1x short perpetual contract. When funding rates are positive, longs pay shorts every 8 hours, generating steady passive yield."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do Binance and Bybit funding rates differ?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Binance and Bybit have separate order books, liquidity pools, and trader sentiment. Differences in retail versus institutional positioning cause funding rates to diverge, creating cross-exchange spread arbitrage opportunities."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is Funding Rate APR calculated?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Annualized Percentage Rate (APR) is calculated by multiplying the 8-hour funding rate by 3 settlements per day, and then by 365 days (APR = 8h Rate * 1095)."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Tailwind CSS & Google Fonts -->
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -97,744 +30,647 @@
         extend: {
           colors: {
             brand: {
-              50: '#ecfdf5',
-              400: '#34d399',
-              500: '#10b981',
-              600: '#059669',
-              glow: '#00f59b'
-            },
-            dark: {
-              bg: '#090d16',
-              card: '#0f172a',
-              border: '#1e293b',
-              subtle: '#334155'
+              gold: '#f59e0b',
+              goldLight: '#fbbf24',
+              dark: '#0a0d14',
+              card: '#121722',
+              cardBorder: '#1f2937',
+              lightBg: '#eceef1',
+              lightCard: '#ffffff',
+              lightBorder: '#e2e8f0',
             }
           },
           fontFamily: {
-            mono: ['JetBrains Mono', 'Fira Code', 'Courier New', 'monospace'],
-            sans: ['Inter', 'system-ui', 'sans-serif']
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
           }
         }
       }
     }
   </script>
+
+  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #080c14;
-      color: #f1f5f9;
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
-    .font-mono-nums {
-      font-family: 'JetBrains Mono', monospace;
-      font-variant-numeric: tabular-nums;
+    .custom-scroll::-webkit-scrollbar {
+      display: none;
     }
-    .glow-green {
-      text-shadow: 0 0 12px rgba(16, 185, 129, 0.45);
+    .custom-scroll {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
-    .glow-box {
-      box-shadow: 0 0 25px -5px rgba(16, 185, 129, 0.15);
+    .card-transition {
+      transition: transform 0.15s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.15s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease;
     }
-    /* Custom scrollbar */
-    ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #090d16;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #1e293b;
-      border-radius: 3px;
-    }
-    ::-webkit-scrollbar-thumb:hover {
-      background: #334155;
+    .card-transition:active {
+      transform: scale(0.98);
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col antialiased selection:bg-brand-500 selection:text-black">
+<body class="min-h-screen bg-[#eceef1] text-slate-900 dark:bg-[#0a0d14] dark:text-slate-100 transition-colors duration-200">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-gradient-to-r from-emerald-950/60 via-slate-900 to-emerald-950/60 border-b border-emerald-500/20 px-4 py-2 text-xs text-center text-slate-300 flex items-center justify-center gap-2">
-    <span class="inline-flex items-center px-1.5 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 uppercase tracking-wide">Autonomous 24/7</span>
-    <span>Live Binance & Bybit Market Data Screener</span>
-    <span class="text-slate-500 hidden sm:inline">|</span>
-    <span class="hidden sm:inline text-slate-400">Next Funding Settlement in: <strong id="settlement-countdown" class="text-emerald-400 font-mono-nums">--:--:--</strong></span>
-  </div>
+  <!-- Top Floating Bar (Linktree Style) -->
+  <header class="fixed top-0 left-0 right-0 z-50 px-4 py-3 sm:px-8">
+    <div class="max-w-[580px] mx-auto flex items-center justify-between">
+      <!-- Left Logo Pill -->
+      <a href="https://heliosis.xyz" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-300/60 dark:border-slate-800 shadow-sm text-xs font-semibold tracking-wide text-slate-800 dark:text-slate-200 hover:opacity-80 transition">
+        <img src="icon.png" alt="Heliosis" class="w-5 h-5 rounded-full object-contain">
+        <span>heliosis.xyz</span>
+      </a>
 
-  <!-- Main Navigation Header -->
-  <header class="border-b border-dark-border bg-dark-card/80 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-emerald-400 to-emerald-600 flex items-center justify-center font-black text-black text-lg shadow-lg shadow-emerald-500/20">
-          ⚡
-        </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold text-lg tracking-tight text-white flex items-center gap-1">
-              HELIOSIS<span class="text-emerald-400">.XYZ</span>
-            </span>
-            <span class="text-[10px] font-semibold bg-emerald-950/80 text-emerald-400 border border-emerald-500/30 px-1.5 py-0.5 rounded">PRO QUANT</span>
-          </div>
-          <p class="text-[11px] text-slate-400 -mt-0.5 hidden sm:block">Basis Yield & Cross-Exchange Arbitrage Terminal</p>
-        </div>
-      </div>
+      <!-- Right Action Controls (Theme Toggle & Share) -->
+      <div class="flex items-center gap-2">
+        <button id="themeToggleBtn" aria-label="Temayı Değiştir" class="p-2 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-300/60 dark:border-slate-800 shadow-sm text-slate-700 dark:text-slate-300 hover:text-amber-500 dark:hover:text-amber-400 transition">
+          <!-- Sun Icon (for dark mode) -->
+          <svg id="sunIcon" class="w-4 h-4 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+          <!-- Moon Icon (for light mode) -->
+          <svg id="moonIcon" class="w-4 h-4 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+          </svg>
+        </button>
 
-      <!-- Quick Exchange Affiliate Action Buttons -->
-      <div class="flex items-center gap-2 sm:gap-3">
-        <a id="nav-bybit-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-yellow-400 border border-yellow-500/20 transition-all hover:scale-105">
-          <span>Bybit VIP</span>
-          <span class="text-[10px] bg-yellow-500/20 text-yellow-300 px-1 rounded">0% Fee</span>
-        </a>
-        <a id="nav-binance-btn" href="#" target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/20 transition-all hover:scale-105">
-          <span>Binance VIP</span>
-          <span class="text-[10px] bg-amber-500/20 text-amber-300 px-1 rounded">20% Off</span>
-        </a>
-        <button id="refresh-data-btn" class="flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 transition-all">
-          <svg id="refresh-spinner" class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-          <span class="hidden sm:inline">Refresh</span>
+        <button id="mainShareBtn" aria-label="Paylaş" class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-slate-300/60 dark:border-slate-800 shadow-sm text-xs font-semibold text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="w-4 h-4 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
+          </svg>
+          <span>Paylaş</span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Market Overview Metrics Bar -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-4 w-full">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
-      <!-- Stat 1 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
-        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Market Funding Bias</span>
-        <div class="mt-1 flex items-baseline gap-2">
-          <span id="stat-sentiment" class="text-base sm:text-lg font-bold text-emerald-400">Loading...</span>
+  <!-- Main Container (Centered Profile Hub) -->
+  <main class="max-w-[580px] mx-auto px-4 pt-20 pb-20 sm:pt-24">
+    
+    <!-- Profile Header (Linktree Style) -->
+    <div class="flex flex-col items-center text-center mb-6">
+      <!-- Profile Avatar -->
+      <div class="relative group cursor-pointer mb-3">
+        <div class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-amber-500 via-orange-400 to-amber-200 shadow-lg shadow-amber-500/20">
+          <img src="icon.png" alt="Heliosis IPTV" class="w-full h-full rounded-full object-cover bg-slate-900 border-2 border-white dark:border-slate-900">
         </div>
-        <div class="mt-1 text-[11px] text-slate-400 flex items-center justify-between">
-          <span>Pos: <b id="stat-pos-count" class="text-emerald-400">0</b></span>
-          <span>Neg: <b id="stat-neg-count" class="text-rose-400">0</b></span>
+        <div class="absolute bottom-1 right-1 bg-emerald-500 text-white p-1 rounded-full border-2 border-white dark:border-slate-900" title="Aktif Doğrulanmış Kaynak">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+          </svg>
         </div>
       </div>
 
-      <!-- Stat 2 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
-        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Top Basis Cash & Carry APR</span>
-        <div class="mt-1 flex items-baseline gap-2">
-          <span id="stat-top-basis-apr" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400 glow-green">--%</span>
-          <span id="stat-top-basis-sym" class="text-xs text-slate-300 font-semibold bg-slate-800 px-1.5 py-0.5 rounded">--</span>
-        </div>
-        <span class="text-[11px] text-slate-400 block mt-1">Delta-neutral Spot + Perp</span>
-      </div>
+      <!-- Title & Handle -->
+      <h1 class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1.5 justify-center">
+        Heliosis IPTV Hub
+        <svg class="w-5 h-5 text-amber-500 fill-amber-500" viewBox="0 0 24 24">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </h1>
+      <p class="text-xs font-medium text-amber-600 dark:text-amber-400 mt-0.5">@heliosis.xyz</p>
 
-      <!-- Stat 3 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
-        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Top Exchange Spread APR</span>
-        <div class="mt-1 flex items-baseline gap-2">
-          <span id="stat-top-arb-apr" class="text-base sm:text-lg font-bold font-mono-nums text-cyan-400">--%</span>
-          <span id="stat-top-arb-sym" class="text-xs text-slate-300 font-semibold bg-slate-800 px-1.5 py-0.5 rounded">--</span>
-        </div>
-        <span class="text-[11px] text-slate-400 block mt-1">Binance vs Bybit Spread</span>
-      </div>
+      <!-- Description -->
+      <p class="text-sm text-slate-600 dark:text-slate-300 mt-2 max-w-md leading-relaxed">
+        Firestick, Android TV, TV Box ve Mobil cihazlar için en popüler IPTV oynatıcıları ve doğrudan APK indirme merkezi.
+      </p>
 
-      <!-- Stat 4 -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 glow-box">
-        <span class="text-[11px] font-medium text-slate-400 uppercase tracking-wider block">Engine Status</span>
-        <div class="mt-1 flex items-center gap-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-          <span class="text-base sm:text-lg font-bold text-white">AUTONOMOUS</span>
-        </div>
-        <span id="stat-updated-time" class="text-[11px] text-slate-400 block mt-1 truncate">Updated: Syncing...</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Partner Affiliate Banner -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 w-full">
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-slate-900 via-emerald-950/40 to-slate-900 border border-emerald-500/30 p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <div class="text-center md:text-left">
-        <div class="inline-flex items-center gap-2 bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-0.5 rounded-full font-semibold mb-2">
-          <span>🚀 Maximize Arbitrage Yields</span>
-        </div>
-        <h2 class="text-lg sm:text-xl font-bold text-white">Execute Delta-Neutral Spreads with VIP Low Fee Rebates</h2>
-        <p class="text-xs sm:text-sm text-slate-300 mt-1 max-w-xl">Lower execution maker fees directly increase your net funding arbitrage profit. Register via Heliosis official institutional partners:</p>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-3 shrink-0">
-        <a id="hero-bybit-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-gradient-to-r from-yellow-500 to-amber-600 text-black hover:opacity-90 shadow-lg transition-transform hover:scale-105 flex items-center gap-2">
-          <span>Claim Bybit $6,135 Bonus (Code: 71XNO1)</span>
-          <span>→</span>
-        </a>
-        <a id="hero-binance-btn" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-slate-800 hover:bg-slate-700 text-amber-400 border border-amber-500/30 transition-transform hover:scale-105 flex items-center gap-2">
-          <span>Claim Binance 100 USDT Voucher (CPA_00M822DCVK)</span>
-          <span>→</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Navigation Tabs -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex-1 w-full">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-dark-border pb-3">
-      <!-- Tabs -->
-      <div class="flex items-center gap-1 sm:gap-2 overflow-x-auto pb-1 sm:pb-0">
-        <button onclick="switchTab('basis')" id="tab-btn-basis" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap">
-          🌾 Cash & Carry Basis Yields
-        </button>
-        <button onclick="switchTab('arbitrage')" id="tab-btn-arbitrage" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
-          ⚡ Cross-Exchange Spreads
-        </button>
-        <button onclick="switchTab('matrix')" id="tab-btn-matrix" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
-          📊 Full Funding Matrix
-        </button>
-        <button onclick="switchTab('calculator')" id="tab-btn-calculator" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap">
-          🧮 Yield Calculator
-        </button>
-      </div>
-
-      <!-- Search Box -->
-      <div class="relative w-full sm:w-64">
-        <input type="text" id="symbol-search" placeholder="Search coin (e.g. BTC, SOL)..." class="w-full bg-slate-900 border border-dark-border rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition-colors">
-        <svg class="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-      </div>
-    </div>
-
-    <!-- TAB 1: Cash & Carry Basis Yields -->
-    <div id="tab-content-basis" class="mt-4">
-      <div class="bg-dark-card border border-dark-border rounded-xl p-4 mb-4 text-xs text-slate-300 leading-relaxed">
-        <strong class="text-white font-semibold flex items-center gap-1 mb-1">
-          <span class="text-emerald-400 text-sm">●</span> What is Cash & Carry Arbitrage?
-        </strong>
-        By holding the underlying coin in <strong>Spot</strong> and simultaneously opening an equal-sized <strong>1x Short Perpetual</strong> contract, your position is 100% delta-neutral (immune to price drops or pumps). When funding rates are positive, you receive funding payments every 8 hours directly into your account as pure passive yield.
-      </div>
-
-      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-          <thead>
-            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
-              <th class="py-3 px-4">Asset</th>
-              <th class="py-3 px-4">Mark Price</th>
-              <th class="py-3 px-4">8h Funding Rate</th>
-              <th class="py-3 px-4">Estimated APR</th>
-              <th class="py-3 px-4">Compound APY</th>
-              <th class="py-3 px-4 text-right">Quick Action</th>
-            </tr>
-          </thead>
-          <tbody id="basis-table-body" class="divide-y divide-dark-border font-mono-nums">
-            <tr>
-              <td colspan="6" class="py-8 text-center text-slate-400">Loading live basis opportunities...</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TAB 2: Cross-Exchange Spreads -->
-    <div id="tab-content-arbitrage" class="mt-4 hidden">
-      <div class="bg-dark-card border border-dark-border rounded-xl p-4 mb-4 text-xs text-slate-300 leading-relaxed">
-        <strong class="text-white font-semibold flex items-center gap-1 mb-1">
-          <span class="text-cyan-400 text-sm">●</span> Cross-Exchange Delta-Neutral Arbitrage
-        </strong>
-        When Binance and Bybit trade at significantly different funding rates for the same token, you can go <strong>Long on the exchange with the lower rate</strong> and <strong>Short on the exchange with the higher rate</strong>. Both positions cancel out market risk while harvesting the spread difference.
-      </div>
-
-      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-          <thead>
-            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
-              <th class="py-3 px-4">Asset</th>
-              <th class="py-3 px-4">Binance 8h</th>
-              <th class="py-3 px-4">Bybit 8h</th>
-              <th class="py-3 px-4">Spread (8h)</th>
-              <th class="py-3 px-4">Spread APR</th>
-              <th class="py-3 px-4">Recommended Strategy</th>
-              <th class="py-3 px-4 text-right">Trade Spreads</th>
-            </tr>
-          </thead>
-          <tbody id="arbitrage-table-body" class="divide-y divide-dark-border font-mono-nums">
-            <tr>
-              <td colspan="7" class="py-8 text-center text-slate-400">Loading cross-exchange spreads...</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TAB 3: Full Funding Matrix -->
-    <div id="tab-content-matrix" class="mt-4 hidden">
-      <div class="overflow-x-auto bg-dark-card border border-dark-border rounded-xl">
-        <table class="w-full text-left border-collapse text-xs sm:text-sm">
-          <thead>
-            <tr class="border-b border-dark-border bg-slate-900/60 text-slate-400 font-semibold uppercase text-[11px] tracking-wider">
-              <th class="py-3 px-4">Symbol</th>
-              <th class="py-3 px-4">Mark Price</th>
-              <th class="py-3 px-4">Binance Rate</th>
-              <th class="py-3 px-4">Bybit Rate</th>
-              <th class="py-3 px-4">Annualized APR</th>
-              <th class="py-3 px-4 text-right">Trade Now</th>
-            </tr>
-          </thead>
-          <tbody id="matrix-table-body" class="divide-y divide-dark-border font-mono-nums">
-            <tr>
-              <td colspan="6" class="py-8 text-center text-slate-400">Loading funding matrix...</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <!-- TAB 4: Yield Calculator -->
-    <div id="tab-content-calculator" class="mt-4 hidden">
-      <div class="bg-dark-card border border-dark-border rounded-xl p-6 max-w-2xl mx-auto glow-box">
-        <h3 class="text-base sm:text-lg font-bold text-white mb-2 flex items-center gap-2">
-          <span>🧮</span> Delta-Neutral Passive Income Calculator
-        </h3>
-        <p class="text-xs text-slate-400 mb-6">Estimate your passive income from crypto funding rates based on position size and annualized APR.</p>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-xs font-medium text-slate-300 mb-1.5">Capital Amount (USDT)</label>
-            <div class="relative">
-              <span class="absolute left-3 top-2.5 text-slate-500 font-mono">$</span>
-              <input type="number" id="calc-capital" value="10000" class="w-full bg-slate-900 border border-dark-border rounded-lg pl-7 pr-3 py-2 text-sm text-white font-mono-nums focus:outline-none focus:border-emerald-500">
-            </div>
+      <!-- Firestick / Downloader Code Quick Banner -->
+      <div class="mt-4 w-full bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 rounded-2xl p-3 text-left flex items-center justify-between gap-3 shadow-sm">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+            </svg>
           </div>
           <div>
-            <label class="block text-xs font-medium text-slate-300 mb-1.5">Target Annual APR (%)</label>
-            <div class="relative">
-              <input type="number" id="calc-apr" value="25.0" step="0.1" class="w-full bg-slate-900 border border-dark-border rounded-lg px-3 py-2 text-sm text-white font-mono-nums focus:outline-none focus:border-emerald-500">
-              <span class="absolute right-3 top-2.5 text-slate-500 font-mono">%</span>
+            <div class="text-xs font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              Downloader / Tarayıcı Bağlantısı
+              <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-500 text-slate-950 font-black">HIZLI APK</span>
+            </div>
+            <div class="text-[12px] font-mono text-amber-700 dark:text-amber-300 mt-0.5 break-all">
+              heliosis.xyz/heliosis-iptv.apk
             </div>
           </div>
         </div>
+        <button onclick="copyToClipboard('https://heliosis.xyz/heliosis-iptv.apk', 'Doğrudan APK bağlantısı kopyalandı!')" class="shrink-0 px-3 py-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl shadow transition">
+          Kopyala
+        </button>
+      </div>
 
-        <!-- Quick APR Presets -->
-        <div class="flex items-center gap-2 mt-3">
-          <span class="text-[11px] text-slate-500">Presets:</span>
-          <button onclick="setCalcApr(12.5)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded">BTC Base (12.5%)</button>
-          <button onclick="setCalcApr(24.0)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-slate-300 px-2 py-0.5 rounded">Altcoin Avg (24%)</button>
-          <button onclick="setCalcApr(50.0)" class="text-[11px] bg-slate-800 hover:bg-slate-700 text-emerald-400 px-2 py-0.5 rounded">Meme / High Vol (50%)</button>
+      <!-- Search & Filter Controls -->
+      <div class="w-full mt-4 space-y-2.5">
+        <div class="relative">
+          <input 
+            type="text" 
+            id="searchInput" 
+            placeholder="IPTV uygulaması ara (TiviMate, Smarters, Kodi...)" 
+            class="w-full pl-10 pr-4 py-2.5 bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 rounded-2xl text-sm text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm"
+          >
+          <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
         </div>
 
-        <!-- Calculated Returns Box -->
-        <div class="mt-6 pt-6 border-t border-dark-border grid grid-cols-3 gap-3 text-center">
-          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
-            <span class="text-[11px] text-slate-400 block">Daily Yield</span>
-            <span id="calc-result-daily" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$6.85</span>
-          </div>
-          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
-            <span class="text-[11px] text-slate-400 block">Monthly Yield</span>
-            <span id="calc-result-monthly" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$208.33</span>
-          </div>
-          <div class="bg-slate-900/80 p-3 rounded-lg border border-dark-border">
-            <span class="text-[11px] text-slate-400 block">Annual Yield</span>
-            <span id="calc-result-annual" class="text-base sm:text-lg font-bold font-mono-nums text-emerald-400">$2,500.00</span>
-          </div>
-        </div>
-
-        <!-- Call to action inside calculator -->
-        <div class="mt-6 text-center">
-          <a id="calc-cta-btn" href="#" target="_blank" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-xl font-bold text-sm bg-gradient-to-r from-emerald-500 to-teal-600 text-black hover:opacity-95 shadow-lg transition-all">
-            <span>Start Arbitrage on Bybit with 0% Maker Fees</span>
-            <span>→</span>
-          </a>
+        <!-- Filter Category Pills -->
+        <div class="flex items-center gap-1.5 overflow-x-auto custom-scroll pb-1">
+          <button class="filter-btn active px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-amber-500 text-slate-950 shadow-sm" data-cat="all">Tümü (22)</button>
+          <button class="filter-btn px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="featured">Öne Çıkan</button>
+          <button class="filter-btn px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="popular">Popüler IPTV</button>
+          <button class="filter-btn px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="alternative">Alternatifler</button>
+          <button class="filter-btn px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="kodi">Kodi Sürümleri</button>
+          <button class="filter-btn px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:border-amber-500" data-cat="tools">TV Araçları</button>
         </div>
       </div>
     </div>
 
-    <!-- VIP Alert Lead Generation Banner -->
-    <section class="mt-12 bg-gradient-to-br from-slate-900 to-slate-950 border border-dark-border rounded-2xl p-6 sm:p-8 text-center relative overflow-hidden">
-      <div class="max-w-xl mx-auto">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 mb-3">
-          <span>🔔 Free Real-time Alerts</span>
-        </span>
-        <h3 class="text-xl sm:text-2xl font-bold text-white">Never Miss High-Yield Funding Spikes (>50% APR)</h3>
-        <p class="text-xs sm:text-sm text-slate-400 mt-2">Join the Heliosis Telegram bot & channel to get instant automated push alerts whenever an extreme cross-exchange spread opens up.</p>
-        <div class="mt-5 flex flex-col sm:flex-row items-center justify-center gap-3">
-          <a id="telegram-link" href="https://t.me/heliosis_quant" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm bg-cyan-500 hover:bg-cyan-400 text-black transition-all">
-            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.95 8.16l-2.02 9.53c-.15.68-.56.84-1.12.52l-3.11-2.29-1.5 1.45c-.17.17-.31.31-.63.31l.22-3.17 5.77-5.21c.25-.22-.05-.35-.39-.12l-7.13 4.49-3.08-.96c-.67-.21-.68-.67.14-.99l12.04-4.64c.56-.2 1.05.14.81 1.08z"/></svg>
-            <span>Join Free Telegram VIP Channel</span>
-          </a>
-        </div>
+    <!-- Links Container -->
+    <div id="linksList" class="space-y-3">
+      <!-- Generated via JavaScript -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="emptyState" class="hidden text-center py-12">
+      <div class="text-4xl mb-2">🔍</div>
+      <p class="text-sm font-semibold text-slate-700 dark:text-slate-300">Aradığınız kriterlere uygun IPTV uygulaması bulunamadı.</p>
+      <button onclick="clearSearch()" class="mt-3 px-4 py-1.5 text-xs font-bold text-amber-500 border border-amber-500 rounded-xl hover:bg-amber-500 hover:text-slate-950 transition">Filtreyi Temizle</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-12 text-center text-xs text-slate-500 dark:text-slate-400 space-y-2">
+      <div class="flex items-center justify-center gap-2">
+        <a href="https://heliosis.xyz" class="hover:underline font-bold text-slate-700 dark:text-slate-200">heliosis.xyz</a>
+        <span>•</span>
+        <span>Heliosis Autonomous Systems</span>
       </div>
-    </section>
+      <p class="text-[11px] text-slate-400 dark:text-slate-500 max-w-sm mx-auto">
+        Tüm APK dosyaları ve oynatıcı bağlantıları bilgilendirme ve doğrudan erişim amacıyla listelenmiştir.
+      </p>
+    </footer>
 
-    <!-- SEO & Educational Knowledge Base (FAQ Section) -->
-    <section class="mt-12 pt-8 border-t border-dark-border" id="faq">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-8">
-          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider bg-emerald-950/60 border border-emerald-500/20 px-3 py-1 rounded-full">Knowledge Base & FAQ</span>
-          <h2 class="text-xl sm:text-2xl font-bold text-white mt-3">Understanding Crypto Funding Rate Arbitrage</h2>
-          <p class="text-xs sm:text-sm text-slate-400 mt-1">Everything you need to know about generating delta-neutral passive yields from Binance and Bybit perpetual futures.</p>
-        </div>
-
-        <div class="space-y-4">
-          <!-- FAQ 1 -->
-          <details class="group bg-dark-card border border-dark-border rounded-xl p-4 transition-all open:border-emerald-500/30">
-            <summary class="flex items-center justify-between cursor-pointer font-semibold text-sm text-white select-none">
-              <span>What is Crypto Funding Rate Arbitrage?</span>
-              <span class="text-emerald-400 group-open:rotate-180 transition-transform text-xs">▼</span>
-            </summary>
-            <div class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed pt-3 border-t border-dark-border">
-              Funding rate arbitrage is a market-neutral quantitative strategy where a trader captures periodic funding fee payments exchanged between long and short perpetual contracts without exposure to underlying price volatility. Because the position is delta-neutral, whether Bitcoin surges 50% or crashes 50%, your portfolio principal remains insulated while harvesting compounding yields.
-            </div>
-          </details>
-
-          <!-- FAQ 2 -->
-          <details class="group bg-dark-card border border-dark-border rounded-xl p-4 transition-all open:border-emerald-500/30">
-            <summary class="flex items-center justify-between cursor-pointer font-semibold text-sm text-white select-none">
-              <span>How does Cash and Carry Arbitrage work?</span>
-              <summary class="hidden"></summary>
-              <span class="text-emerald-400 group-open:rotate-180 transition-transform text-xs">▼</span>
-            </summary>
-            <div class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed pt-3 border-t border-dark-border">
-              In cash and carry arbitrage:
-              <ol class="list-decimal list-inside mt-2 space-y-1 text-slate-300">
-                <li>You buy \$10,000 worth of Spot asset (e.g. SOL or BTC).</li>
-                <li>You simultaneously open a 1x Short Perpetual Futures contract worth \$10,000 of the same asset.</li>
-                <li>Because Spot (+1x) and Perp Short (-1x) balance each other, your net directional market exposure is exactly zero.</li>
-                <li>Every 8 hours (at 00:00, 08:00, 16:00 UTC), if funding rates are positive, the perpetual shorts receive payments directly funded by the long traders.</li>
-              </ol>
-            </div>
-          </details>
-
-          <!-- FAQ 3 -->
-          <details class="group bg-dark-card border border-dark-border rounded-xl p-4 transition-all open:border-emerald-500/30">
-            <summary class="flex items-center justify-between cursor-pointer font-semibold text-sm text-white select-none">
-              <span>Why do Binance and Bybit funding rates differ?</span>
-              <span class="text-emerald-400 group-open:rotate-180 transition-transform text-xs">▼</span>
-            </summary>
-            <div class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed pt-3 border-t border-dark-border">
-              Binance and Bybit maintain distinct order books, margin rules, and liquidity profiles. When speculative retail sentiment is excessively bullish on one exchange while institutional traders dominate the other, funding rates diverge. This creates a riskless spread: a trader can go Long on the exchange with the lower rate and Short on the exchange with the higher rate.
-            </div>
-          </details>
-
-          <!-- FAQ 4 -->
-          <details class="group bg-dark-card border border-dark-border rounded-xl p-4 transition-all open:border-emerald-500/30">
-            <summary class="flex items-center justify-between cursor-pointer font-semibold text-sm text-white select-none">
-              <span>How are APR and APY calculated on Heliosis Terminal?</span>
-              <span class="text-emerald-400 group-open:rotate-180 transition-transform text-xs">▼</span>
-            </summary>
-            <div class="mt-3 text-xs sm:text-sm text-slate-300 leading-relaxed pt-3 border-t border-dark-border font-mono text-xs">
-              <p class="font-sans mb-1 text-slate-300">Perpetual funding settles 3 times daily (every 8 hours, 1095 times annually):</p>
-              <div class="bg-slate-900 p-2.5 rounded border border-dark-border my-2">
-                <span class="text-emerald-400 font-bold">APR</span> = 8h Rate × 3 × 365<br>
-                <span class="text-cyan-400 font-bold">APY</span> = (1 + 8h Rate)<sup>1095</sup> - 1
-              </div>
-              <p class="font-sans text-slate-400 text-xs">When yields are continuously reinvested, APY accounts for compounding returns over 365 calendar days.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="border-t border-dark-border bg-slate-950 py-8 mt-12 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="font-extrabold text-white text-sm">HELIOSIS.XYZ</span>
-            <span class="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded">QUANT TERMINAL</span>
-          </div>
-          <p class="mt-1 text-[11px] text-slate-500">Fully autonomous market intelligence screener powered by GitHub Actions & Cloudflare Pages.</p>
-        </div>
-        <div class="flex items-center gap-4 text-xs">
-          <a href="#" class="hover:text-slate-300">Privacy Policy</a>
-          <a href="#" class="hover:text-slate-300">Affiliate Disclosure</a>
-          <a href="#" class="hover:text-slate-300">Risk Warning</a>
-        </div>
-      </div>
-      <div class="mt-6 pt-6 border-t border-dark-border/40 text-[11px] text-slate-600 leading-relaxed text-center md:text-left">
-        <strong>Risk Disclaimer & Affiliate Disclosure:</strong> Cryptocurrency derivatives trading involves substantial risk of loss and is not suitable for every investor. Funding rates fluctuate dynamically every 8 hours and can turn negative. Heliosis Terminal provides informational and analytical tools only and does not provide financial or investment advice. Links on this page may contain affiliate tracking which provides commissions at zero extra cost to you.
-      </div>
-    </div>
-  </footer>
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-slate-900 text-white dark:bg-white dark:text-slate-900 text-xs font-semibold shadow-xl border border-slate-700 dark:border-slate-200 transition-all duration-300 opacity-0 pointer-events-none translate-y-4">
+    Kopyalandı!
+  </div>
 
-  <!-- Scripts -->
-  <script src="./config.js?v=1.1"></script>
+  <!-- JavaScript Application Logic -->
   <script>
-    let rawData = null;
-    let currentTab = 'basis';
-
-    // Apply configuration links dynamically
-    function initAffiliateLinks() {
-      const cfg = window.HELIOSIS_CONFIG || {};
-      const aff = cfg.affiliates || {};
-      
-      const bybitUrl = aff.bybit?.url || "https://www.bybit.com";
-      const binanceUrl = aff.binance?.url || "https://accounts.binance.com";
-      
-      const setHref = (id, url) => {
-        const el = document.getElementById(id);
-        if (el) el.href = url;
-      };
-
-      setHref('nav-bybit-btn', bybitUrl);
-      setHref('nav-binance-btn', binanceUrl);
-      setHref('hero-bybit-btn', bybitUrl);
-      setHref('hero-binance-btn', binanceUrl);
-      setHref('calc-cta-btn', bybitUrl);
-
-      if (cfg.community?.telegramUrl) {
-        setHref('telegram-link', cfg.community.telegramUrl);
+    // All Curated IPTV APK Data
+    const APK_DATA = [
+      // 🌟 FEATURED / OFFICIAL
+      {
+        id: "heliosis-iptv",
+        title: "HeliosisTV IPTV Player",
+        subtitle: "Resmi APK • Hızlı M3U & Xtream • Ultra 4K TV",
+        category: "featured",
+        badge: "Resmi • Doğrudan İndir",
+        badgeColor: "bg-amber-500 text-slate-950",
+        url: "https://heliosis.xyz/heliosis-iptv.apk",
+        icon: "assets/icons/heliosis_iptv.png",
+        featured: true,
+        directDownload: true
+      },
+      // 🚀 POPULAR IPTV APKS
+      {
+        id: "tivimate",
+        title: "TiviMate IPTV Player",
+        subtitle: "Android TV & Firestick İçin 1 Numaralı Arayüz",
+        category: "popular",
+        badge: "v4.7.0 APK",
+        badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30",
+        url: "https://files.catbox.moe/xjz6up.apk",
+        icon: "assets/icons/tivimate.png",
+        directDownload: true
+      },
+      {
+        id: "iptv-smarters-pro",
+        title: "IPTV Smarters Pro",
+        subtitle: "Xtream Codes API, EPG & Çoklu Kullanıcı",
+        category: "popular",
+        badge: "v4.0.2 APK",
+        badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30",
+        url: "https://files.catbox.moe/08yg78.apk",
+        icon: "assets/icons/iptv_smarters_pro.png",
+        directDownload: true
+      },
+      {
+        id: "xciptv-player",
+        title: "XCIPTV Player",
+        subtitle: "Dahili ExoPlayer & VLC Motoru, Modern TV Menüsü",
+        category: "popular",
+        badge: "v502 APK",
+        badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30",
+        url: "https://files.catbox.moe/gr78kb.apk",
+        icon: "assets/icons/xciptv_player.png",
+        directDownload: true
+      },
+      {
+        id: "ott-navigator",
+        title: "OTT Navigator IPTV",
+        subtitle: "Gelişmiş Filtreleme, Canlı TV Arşivi & Timeshift",
+        category: "popular",
+        badge: "Premium APK",
+        badgeColor: "bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border border-indigo-500/30",
+        url: "https://files.modyolo.com/OTT%20Navigator%20IPTV/OTT_Navigator_v1.6.9.4_Standalone_Premium.apk",
+        icon: "assets/icons/ott_navigator.png",
+        directDownload: true
+      },
+      {
+        id: "sparkle-tv",
+        title: "Sparkle TV DVR & Player",
+        subtitle: "Zarif Canlı TV Rehberi ve Kayıt (PVR/DVR) Desteği",
+        category: "popular",
+        badge: "Güncel APK",
+        badgeColor: "bg-pink-500/10 text-pink-600 dark:text-pink-400 border border-pink-500/30",
+        url: "https://d.apkpure.com/b/APK/se.hedekonsult.sparkle?version=latest",
+        icon: "assets/icons/sparkle_tv.png",
+        directDownload: false
+      },
+      {
+        id: "televizo",
+        title: "Televizo IPTV Player",
+        subtitle: "Sade, Ultra Akıcı ve Düşük Bellek Tüketimi",
+        category: "popular",
+        badge: "Stabil APK",
+        badgeColor: "bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/30",
+        url: "https://bit.ly/3l3Bj9v",
+        icon: "assets/icons/televizo.png",
+        directDownload: true
+      },
+      // 📺 ALTERNATIVE IPTV PLAYERS
+      {
+        id: "implayer",
+        title: "iMPlayer IPTV Dashboard",
+        subtitle: "Çoklu Ekran (Multi-Screen) ve Gelişmiş Catch-up",
+        category: "alternative",
+        badge: "Resmi İndir",
+        badgeColor: "bg-slate-500/10 text-slate-600 dark:text-slate-400 border border-slate-500/30",
+        url: "https://implayer.tv/d",
+        icon: "assets/icons/implayer.png",
+        directDownload: false
+      },
+      {
+        id: "iptv-extreme",
+        title: "IPTV Extreme Pro",
+        subtitle: "Dahili Oynatıcı, EPG Otomatik Güncelleme & Kayıt",
+        category: "alternative",
+        badge: "v122 APK",
+        badgeColor: "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/30",
+        url: "https://iptvextreme.org/public/releases/122/Free/app-armeabi-v7a-release.apk",
+        icon: "assets/icons/iptv_extreme.png",
+        directDownload: true
+      },
+      {
+        id: "gse-smart-iptv",
+        title: "GSE Smart IPTV",
+        subtitle: "JSON & M3U Format Desteği, RTMP/HLS Akışları",
+        category: "alternative",
+        badge: "APK",
+        badgeColor: "bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/30",
+        url: "https://d.apkpure.com/b/APK/com.gsetech.smartiptv?version=latest",
+        icon: "assets/icons/gse_smart_iptv.png",
+        directDownload: false
+      },
+      {
+        id: "ottplayer",
+        title: "OttPlayer (FOSS)",
+        subtitle: "Web Panelinden Bulut Playlist Yönetimi",
+        category: "alternative",
+        badge: "Doğrudan APK",
+        badgeColor: "bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/30",
+        url: "https://files.catbox.moe/dt2afz.apk",
+        icon: "assets/icons/ottplayer.png",
+        directDownload: true
+      },
+      {
+        id: "purple-player",
+        title: "Purple Player IPTV",
+        subtitle: "Kullanıcı Dostu TV ve Kumanda Uyumu",
+        category: "alternative",
+        badge: "AFTV APK",
+        badgeColor: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/30",
+        url: "https://aftv.news/115304",
+        icon: "assets/icons/purple_player_iptv.png",
+        directDownload: true
+      },
+      {
+        id: "nextv-player",
+        title: "NexTV Player",
+        subtitle: "Modern Fransız Arayüzü & Akıllı EPG Eşleme",
+        category: "alternative",
+        badge: "Doğrudan APK",
+        badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30",
+        url: "https://api.nextv.fr/download/apk",
+        icon: "assets/icons/nextv_player.png",
+        directDownload: true
+      },
+      {
+        id: "perfect-player",
+        title: "Perfect Player IPTV",
+        subtitle: "Klasik OSD Menülü IPTV Oynatıcı",
+        category: "alternative",
+        badge: "APK İndir",
+        badgeColor: "bg-slate-500/10 text-slate-600 dark:text-slate-400 border border-slate-500/30",
+        url: "https://troypoint.com/perfectplayertb",
+        icon: "assets/icons/perfect_player.png",
+        directDownload: true
+      },
+      {
+        id: "soplayer",
+        title: "SOPlayer IPTV Player",
+        subtitle: "Özel Kod ve Pin ile Hızlı Giriş",
+        category: "alternative",
+        badge: "Doğrudan APK",
+        badgeColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30",
+        url: "https://files.catbox.moe/zwz4tt.apk",
+        icon: "assets/icons/soplayer_iptv_player.png",
+        directDownload: true
+      },
+      {
+        id: "vu-iptv-player",
+        title: "VU IPTV Player Pro",
+        subtitle: "Yüksek Hızlı Kanal Geçişi & Xtream Desteği",
+        category: "alternative",
+        badge: "v1.2.4 APK",
+        badgeColor: "bg-orange-500/10 text-orange-600 dark:text-orange-400 border border-orange-500/30",
+        url: "https://files.catbox.moe/gr78kb.apk",
+        icon: "assets/icons/vu_iptv_player.png",
+        directDownload: true
+      },
+      // 🎬 KODI MEDIA CENTER
+      {
+        id: "kodi-21",
+        title: "Kodi 21.2 Omega (Stable)",
+        subtitle: "En Popüler Açık Kaynak Medya & IPTV Merkezi",
+        category: "kodi",
+        badge: "Stable Release • 32-bit",
+        badgeColor: "bg-blue-600 text-white font-bold",
+        url: "https://mirrors.kodi.tv/releases/android/arm/kodi-21.2-Omega-armeabi-v7a.apk?https=1",
+        icon: "assets/icons/kodi_21_2___stable_release.png",
+        directDownload: true
+      },
+      {
+        id: "kodi-19",
+        title: "Kodi 19.5 Matrix",
+        subtitle: "Eski Android TV ve Box Cihazlar İçin Yüksek Kararlılık",
+        category: "kodi",
+        badge: "Matrix APK",
+        badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30",
+        url: "http://mirrors.kodi.tv/releases/android/arm/kodi-19.5-Matrix-armeabi-v7a.apk",
+        icon: "assets/icons/kodi_19_5.png",
+        directDownload: true
+      },
+      {
+        id: "kodi-18",
+        title: "Kodi 18.9 Leia",
+        subtitle: "Geniş Eklenti Uyumluluğu Olan Klasik Kararlı Sürüm",
+        category: "kodi",
+        badge: "Leia APK",
+        badgeColor: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/30",
+        url: "http://mirrors.kodi.tv/releases/android/arm/kodi-18.9-Leia-armeabi-v7a.apk",
+        icon: "assets/icons/kodi_18_9.png",
+        directDownload: true
+      },
+      // 🛠️ TV ARAÇLARI VE OYNATICILAR
+      {
+        id: "smarttube",
+        title: "SmartTube Next (Reklamsız TV)",
+        subtitle: "Android TV & Firestick İçin SponsorBlock & Reklamsız",
+        category: "tools",
+        badge: "GitHub Stable",
+        badgeColor: "bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/30",
+        url: "https://github.com/yuliskov/SmartTubeNext/releases/download/latest/smarttube_stable.apk",
+        icon: "assets/icons/smarttubenext_ad_free_youtube.png",
+        directDownload: true
+      },
+      {
+        id: "downloader",
+        title: "Downloader by AFTVnews",
+        subtitle: "Firestick & TV'ye Kodla Doğrudan APK İndirici",
+        category: "tools",
+        badge: "Zorunlu TV Aracı",
+        badgeColor: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30",
+        url: "https://files.catbox.moe/6xhuc3.apk",
+        icon: "assets/icons/downloader.png",
+        directDownload: true
+      },
+      {
+        id: "mx-player",
+        title: "MX Player Pro Lite",
+        subtitle: "Donanım Hızlandırmalı IPTV Harici Video Oynatıcı Motoru",
+        category: "tools",
+        badge: "Premium APK",
+        badgeColor: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30",
+        url: "https://files.catbox.moe/88u1cp.apk",
+        icon: "assets/icons/mx_player_pro_premium_lite.png",
+        directDownload: true
       }
-    }
+    ];
 
-    // Tab Switching
-    function switchTab(tabId) {
-      currentTab = tabId;
-      const tabs = ['basis', 'arbitrage', 'matrix', 'calculator'];
-      tabs.forEach(t => {
-        const content = document.getElementById(`tab-content-${t}`);
-        const btn = document.getElementById(`tab-btn-${t}`);
-        if (t === tabId) {
-          if (content) content.classList.remove('hidden');
-          if (btn) {
-            btn.className = "px-3.5 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-all bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 whitespace-nowrap";
-          }
-        } else {
-          if (content) content.classList.add('hidden');
-          if (btn) {
-            btn.className = "px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-all text-slate-400 hover:text-white hover:bg-slate-800/60 whitespace-nowrap";
-          }
-        }
-      });
-    }
+    // State
+    let currentCategory = 'all';
+    let searchQuery = '';
 
-    // Countdown Clock to Next Funding (Settlements at 00:00, 08:00, 16:00 UTC)
-    function startCountdown() {
-      function update() {
-        const now = new Date();
-        const nowMs = now.getTime();
+    // Render Cards
+    function renderCards() {
+      const listEl = document.getElementById('linksList');
+      const emptyEl = document.getElementById('emptyState');
+      
+      const filtered = APK_DATA.filter(item => {
+        const matchesCategory = (currentCategory === 'all') || 
+                                (currentCategory === 'featured' && item.featured) ||
+                                (item.category === currentCategory);
         
-        // Find next 8h UTC mark
-        const nowUtcHours = now.getUTCHours();
-        let nextUtcHour;
-        if (nowUtcHours < 8) nextUtcHour = 8;
-        else if (nowUtcHours < 16) nextUtcHour = 16;
-        else nextUtcHour = 24;
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q || 
+                              item.title.toLowerCase().includes(q) || 
+                              item.subtitle.toLowerCase().includes(q) ||
+                              item.badge.toLowerCase().includes(q);
 
-        const target = new Date(Date.UTC(
-          now.getUTCFullYear(),
-          now.getUTCMonth(),
-          now.getUTCDate() + (nextUtcHour === 24 ? 1 : 0),
-          nextUtcHour % 24, 0, 0, 0
-        ));
-
-        const diff = Math.max(0, target.getTime() - nowMs);
-        const hours = Math.floor(diff / (1000 * 60 * 60));
-        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-        const pad = (n) => String(n).padStart(2, '0');
-        const str = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
-        const el = document.getElementById('settlement-countdown');
-        if (el) el.textContent = str;
-      }
-      setInterval(update, 1000);
-      update();
-    }
-
-    // Format numbers
-    function formatPrice(p) {
-      if (p == null || isNaN(p)) return '--';
-      if (p >= 1000) return '$' + p.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      if (p >= 1) return '$' + p.toFixed(4);
-      return '$' + p.toFixed(6);
-    }
-
-    function formatPct(n) {
-      if (n == null || isNaN(n)) return '--';
-      const sign = n > 0 ? '+' : '';
-      return `${sign}${n.toFixed(4)}%`;
-    }
-
-    function formatApr(n) {
-      if (n == null || isNaN(n)) return '--';
-      const sign = n > 0 ? '+' : '';
-      return `${sign}${n.toFixed(2)}%`;
-    }
-
-    // Render Data into UI
-    function renderTables(filter = "") {
-      if (!rawData) return;
-      
-      const q = filter.trim().toUpperCase();
-      const bybitUrl = window.HELIOSIS_CONFIG?.affiliates?.bybit?.url || "https://www.bybit.com";
-      const binanceUrl = window.HELIOSIS_CONFIG?.affiliates?.binance?.url || "https://accounts.binance.com";
-
-      // 1. Basis Table (Cash & Carry)
-      const basisTbody = document.getElementById('basis-table-body');
-      const basisList = (rawData.top_cash_and_carry || []).filter(item => 
-        !q || item.symbol.includes(q) || item.base_asset.includes(q)
-      );
-
-      if (basisList.length === 0) {
-        basisTbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No matching assets found.</td></tr>`;
-      } else {
-        basisTbody.innerHTML = basisList.map(item => `
-          <tr class="hover:bg-slate-800/40 transition-colors">
-            <td class="py-3 px-4 flex items-center gap-2">
-              <span class="font-bold text-white text-sm">${item.base_asset}</span>
-              <span class="text-[10px] text-slate-500 font-sans">PERP</span>
-            </td>
-            <td class="py-3 px-4 text-slate-300">${formatPrice(item.price)}</td>
-            <td class="py-3 px-4 font-semibold text-emerald-400">${formatPct(item.avg_rate_8h_pct)}</td>
-            <td class="py-3 px-4 font-bold text-emerald-400 glow-green text-sm">${formatApr(item.apr_pct)}</td>
-            <td class="py-3 px-4 text-slate-400 text-xs">${formatApr(item.apy_pct)}</td>
-            <td class="py-3 px-4 text-right">
-              <a href="${bybitUrl}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-400 hover:bg-emerald-500/30 border border-emerald-500/30 transition-all">
-                <span>Earn Yield</span> →
-              </a>
-            </td>
-          </tr>
-        `).join('');
-      }
-
-      // 2. Cross-Exchange Arbitrage Table
-      const arbTbody = document.getElementById('arbitrage-table-body');
-      const arbList = (rawData.top_arbitrage_spreads || []).filter(item => 
-        !q || item.symbol.includes(q) || item.base_asset.includes(q)
-      );
-
-      if (arbList.length === 0) {
-        arbTbody.innerHTML = `<tr><td colspan="7" class="py-8 text-center text-slate-500">No active arbitrage spreads found.</td></tr>`;
-      } else {
-        arbTbody.innerHTML = arbList.map(item => `
-          <tr class="hover:bg-slate-800/40 transition-colors">
-            <td class="py-3 px-4">
-              <span class="font-bold text-white text-sm">${item.base_asset}</span>
-            </td>
-            <td class="py-3 px-4 ${item.binance_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
-              ${formatPct(item.binance_rate_pct)}
-            </td>
-            <td class="py-3 px-4 ${item.bybit_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
-              ${formatPct(item.bybit_rate_pct)}
-            </td>
-            <td class="py-3 px-4 font-bold text-cyan-400">${item.spread_8h_pct.toFixed(4)}%</td>
-            <td class="py-3 px-4 font-bold text-cyan-400 text-sm">${formatApr(item.spread_apr_pct)}</td>
-            <td class="py-3 px-4">
-              <span class="text-[10px] font-sans font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-200 border border-slate-700">
-                ${item.strategy}
-              </span>
-            </td>
-            <td class="py-3 px-4 text-right">
-              <a href="${bybitUrl}" target="_blank" class="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-1 rounded bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 border border-cyan-500/30 transition-all">
-                <span>Trade</span> →
-              </a>
-            </td>
-          </tr>
-        `).join('');
-      }
-
-      // 3. Matrix Table
-      const matrixTbody = document.getElementById('matrix-table-body');
-      const fullList = (rawData.all_pairs || []).filter(item => 
-        !q || item.symbol.includes(q) || item.base_asset.includes(q)
-      );
-
-      if (fullList.length === 0) {
-        matrixTbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No coins match search query.</td></tr>`;
-      } else {
-        matrixTbody.innerHTML = fullList.map(item => `
-          <tr class="hover:bg-slate-800/40 transition-colors">
-            <td class="py-3 px-4 font-bold text-white">${item.symbol}</td>
-            <td class="py-3 px-4 text-slate-300">${formatPrice(item.price)}</td>
-            <td class="py-3 px-4 ${item.binance_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
-              ${formatPct(item.binance_rate_pct)}
-            </td>
-            <td class="py-3 px-4 ${item.bybit_rate_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
-              ${formatPct(item.bybit_rate_pct)}
-            </td>
-            <td class="py-3 px-4 font-bold ${item.apr_pct >= 0 ? 'text-emerald-400' : 'text-rose-400'}">
-              ${formatApr(item.apr_pct)}
-            </td>
-            <td class="py-3 px-4 text-right">
-              <a href="${bybitUrl}" target="_blank" class="text-[11px] text-slate-400 hover:text-white underline">
-                Trade
-              </a>
-            </td>
-          </tr>
-        `).join('');
-      }
-    }
-
-    // Load Data from JSON
-    async function loadMarketData() {
-      const spinner = document.getElementById('refresh-spinner');
-      if (spinner) spinner.classList.add('animate-spin');
-
-      try {
-        const resp = await fetch('./data/latest.json?v=' + Date.now());
-        if (!resp.ok) throw new Error("Could not fetch data/latest.json");
-        rawData = await resp.json();
-
-        // Update Top Stats
-        const summary = rawData.market_summary || {};
-        document.getElementById('stat-sentiment').textContent = summary.sentiment?.split(' ')[0] || 'NEUTRAL';
-        document.getElementById('stat-pos-count').textContent = summary.positive_funding_pairs || 0;
-        document.getElementById('stat-neg-count').textContent = summary.negative_funding_pairs || 0;
-        
-        if (summary.highest_basis_apr) {
-          document.getElementById('stat-top-basis-apr').textContent = `+${summary.highest_basis_apr.apr_pct}%`;
-          document.getElementById('stat-top-basis-sym').textContent = summary.highest_basis_apr.base_asset;
-        }
-
-        if (summary.highest_arbitrage_spread) {
-          document.getElementById('stat-top-arb-apr').textContent = `+${summary.highest_arbitrage_spread.spread_apr_pct}%`;
-          document.getElementById('stat-top-arb-sym').textContent = summary.highest_arbitrage_spread.base_asset;
-        }
-
-        if (rawData.metadata?.updated_at_utc) {
-          document.getElementById('stat-updated-time').textContent = `Updated: ${rawData.metadata.updated_at_utc}`;
-        }
-
-        renderTables(document.getElementById('symbol-search').value);
-      } catch (err) {
-        console.error("Error loading data:", err);
-      } finally {
-        if (spinner) spinner.classList.remove('animate-spin');
-      }
-    }
-
-    // Yield Calculator logic
-    function updateCalculator() {
-      const capital = parseFloat(document.getElementById('calc-capital').value) || 0;
-      const apr = parseFloat(document.getElementById('calc-apr').value) || 0;
-
-      const annual = capital * (apr / 100);
-      const monthly = annual / 12;
-      const daily = annual / 365;
-
-      const fmt = (n) => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-      document.getElementById('calc-result-daily').textContent = fmt(daily);
-      document.getElementById('calc-result-monthly').textContent = fmt(monthly);
-      document.getElementById('calc-result-annual').textContent = fmt(annual);
-    }
-
-    function setCalcApr(val) {
-      document.getElementById('calc-apr').value = val;
-      updateCalculator();
-    }
-
-    // Event Listeners
-    document.addEventListener('DOMContentLoaded', () => {
-      initAffiliateLinks();
-      startCountdown();
-      loadMarketData();
-
-      document.getElementById('refresh-data-btn').addEventListener('click', loadMarketData);
-      document.getElementById('symbol-search').addEventListener('input', (e) => {
-        renderTables(e.target.value);
+        return matchesCategory && matchesSearch;
       });
 
-      document.getElementById('calc-capital').addEventListener('input', updateCalculator);
-      document.getElementById('calc-apr').addEventListener('input', updateCalculator);
-      updateCalculator();
+      if (filtered.length === 0) {
+        listEl.innerHTML = '';
+        emptyEl.classList.remove('hidden');
+        return;
+      }
 
-      // Auto-reload data every 3 minutes
-      setInterval(loadMarketData, 180000);
+      emptyEl.classList.add('hidden');
+
+      let html = '';
+      filtered.forEach(item => {
+        const isFeatured = item.featured;
+        const containerClasses = isFeatured
+          ? 'bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent dark:from-amber-500/20 dark:via-amber-500/10 dark:to-transparent border-2 border-amber-500/60 dark:border-amber-500/80 shadow-md shadow-amber-500/10'
+          : 'bg-white dark:bg-slate-900 border border-slate-300/80 dark:border-slate-800/90 hover:border-slate-400 dark:hover:border-slate-700 shadow-sm';
+
+        html += `
+          <div class="relative group card-transition rounded-2xl ${containerClasses} p-3 flex items-center justify-between gap-3">
+            <!-- Left Icon & Info Link -->
+            <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3.5 min-w-0 flex-1">
+              <div class="w-12 h-12 rounded-xl bg-slate-100 dark:bg-slate-800 p-1 flex items-center justify-center shrink-0 overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
+                <img 
+                  src="${item.icon}" 
+                  alt="${item.title}" 
+                  class="w-full h-full object-cover rounded-lg"
+                  onerror="this.onerror=null; this.src='icon.png';"
+                >
+              </div>
+              <div class="min-w-0 flex-1">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-white truncate group-hover:text-amber-500 transition-colors">
+                    ${item.title}
+                  </h3>
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${item.badgeColor}">
+                    ${item.badge}
+                  </span>
+                </div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 truncate mt-0.5">
+                  ${item.subtitle}
+                </p>
+              </div>
+            </a>
+
+            <!-- Right Action Buttons -->
+            <div class="flex items-center gap-1 shrink-0">
+              <!-- Direct Download Action Button -->
+              <a 
+                href="${item.url}" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                title="APK İndir"
+                class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-amber-500 hover:text-slate-950 dark:hover:bg-amber-500 dark:hover:text-slate-950 transition shadow-sm"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
+              </a>
+
+              <!-- Copy Link Button -->
+              <button 
+                onclick="copyToClipboard('${item.url}', '${item.title} bağlantısı kopyalandı!')"
+                title="Bağlantıyı Kopyala"
+                class="p-2.5 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        `;
+      });
+
+      listEl.innerHTML = html;
+    }
+
+    // Filter Buttons
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-amber-500', 'text-slate-950', 'border-transparent');
+          b.classList.add('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300', 'border-slate-300', 'dark:border-slate-800');
+        });
+        btn.classList.add('active', 'bg-amber-500', 'text-slate-950', 'border-transparent');
+        btn.classList.remove('bg-white', 'dark:bg-slate-900', 'text-slate-700', 'dark:text-slate-300', 'border-slate-300', 'dark:border-slate-800');
+        
+        currentCategory = btn.getAttribute('data-cat');
+        renderCards();
+      });
     });
+
+    // Search Input
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      searchQuery = e.target.value;
+      renderCards();
+    });
+
+    function clearSearch() {
+      document.getElementById('searchInput').value = '';
+      searchQuery = '';
+      currentCategory = 'all';
+      document.querySelectorAll('.filter-btn').forEach((b, idx) => {
+        if (idx === 0) {
+          b.click();
+        }
+      });
+    }
+
+    // Toast & Clipboard
+    function copyToClipboard(text, msg) {
+      if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(text).then(() => showToast(msg));
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        try {
+          document.execCommand('copy');
+          showToast(msg);
+        } catch (err) {
+          showToast('Bağlantı kopyalanamadı.');
+        }
+        document.body.removeChild(textarea);
+      }
+    }
+
+    let toastTimer;
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+      }, 2500);
+    }
+
+    // Share Profile
+    document.getElementById('mainShareBtn').addEventListener('click', () => {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Heliosis IPTV Hub',
+          text: 'En Popüler IPTV APK İndirme Merkezi - Firestick & Android TV Uyumlu',
+          url: window.location.href,
+        }).catch(() => {});
+      } else {
+        copyToClipboard(window.location.href, 'Sayfa bağlantısı panoya kopyalandı!');
+      }
+    });
+
+    // Theme Toggle
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    themeToggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isDark) {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+
+    // Initial Theme Load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      document.documentElement.classList.remove('dark');
+    } else {
+      document.documentElement.classList.add('dark');
+    }
+
+    // Initial Render
+    renderCards();
   </script>
 </body>
 </html>
