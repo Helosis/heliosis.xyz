@@ -1,11 +1,11 @@
 {
   "version": "1.0.0",
-  "releaseDate": "2026-10-19T20:45:11.076Z",
+  "releaseDate": "2026-10-19T21:21:04.990Z",
   "mandatory": false,
   "downloadUrl": "https://heliosis.xyz/updates/MEB-Teftis-Kurulum-1.0.0.exe",
   "latestUrl": "https://heliosis.xyz/updates/MEB-Teftis-Kurulum-Guncel.exe",
   "fileName": "MEB-Teftis-Kurulum-1.0.0.exe",
-  "fileSize": 152063478,
-  "sha256": "6c14c8bd907f0b16d9ead5f4bc0e6499b9d9e398d7dc77a7572284fcf8431d54",
+  "fileSize": 152085874,
+  "sha256": "b5092804bb87494c16e6961ebe9ff50d281c82252265f4173ab457603a1e747f",
   "notes": "MEB Teftiş Kurulu PDF Editör Pro v1.0.0 Sürümü:\n- En güncel düzenlemeler ve stabilite iyileştirmeleri uygulandı.\n- Manuel ve Akıllı Form (Autofill) motoru güncellendi.\n- Otomatik arka plan güncelleme ve doğrudan üzerine kurulum yeteneği aktif."
 }
