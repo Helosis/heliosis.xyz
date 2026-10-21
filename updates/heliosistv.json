@@ -1,8 +1,8 @@
 {
-  "versionCode": 2,
-  "versionName": "1.1.0",
+  "versionCode": 3,
+  "versionName": "1.2.0",
   "apkUrl": "https://heliosis.xyz/heliosistv.apk",
   "fileName": "heliosistv.apk",
-  "changelog": "HeliosisTV v1.1.0 Güncellemesi:\n• Otomatik Güncelleme Motoru (Uygulama içinden tek tıkla yeni sürümleri indirme ve kurma)\n• Akıllı OSD: Tam ekranda 3.5 sn sonra kontrollerin otomatik gizlenmesi, ekrana tek dokunuşla anında geri gelmesi\n• Telefon ve Tabletler için Pencere İçinde Oynatma (PiP) desteği\n• Buket Yönetimi: Sunucudan gelen özgün kategori sıralaması korundu, buket gizleme ve silme desteği\n• Android TV & Kumanda: D-Pad odaklama, Oynat/Duraklat (Play/Pause) ve kanal zap kontrolleri",
+  "changelog": "HeliosisTV v1.2.0 Güncellemesi:\n• Otomatik Giriş: Kayıtlı hesap varsa her açılışta giriş ekranını otomatik atlayarak direkt ana ekrana geçer.\n• Bitiş Tarihi & Kullanıcı Bilgisi: Ana sayfanın en altında aktif kullanıcı adı ve IPTV abonelik bitiş tarihi anlık gösterilir.\n• Çoklu Hesap Yönetimi (Ayarlar): Birden fazla Xtream ve M3U hesabı ekleyebilir, aralarında tek tıkla geçiş yapabilirsiniz.\n• Android TV Kumanda Belirgin Çerçeve: Buketler ve kanallar arasında gezinirken odaklanan öge yüksek kontrastlı neon çerçeve ile belirginleşir.\n• Dizi ve Filmlerde Kaldığı Yerden Devam Etme: İzlenen süre kaydedilir, kart üzerinde ilerleme çubuğu gösterilir ve otomatik kaldığı dakikadan başlar.\n• Dizi Sezon ve Bölüm Desteği: Dizilerde sezon seçimi, bölüm listesi, bölüm süreleri ve bölüm bazlı kaldığı yerden devam etme desteği eklendi.\n• Hızlı İleri/Geri Sarma: Kumanda Sol/Sağ tuşları ile film ve dizilerde 10 saniye sarma.",
   "mandatory": false
 }
