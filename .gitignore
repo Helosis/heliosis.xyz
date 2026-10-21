@@ -4,3 +4,7 @@ __pycache__/
 .vscode/
 .idea/
 .env
+
+# Binaries uploaded to GitHub Releases (prevent Cloudflare 25MB limit failure)
+*.apk
+*.zip
