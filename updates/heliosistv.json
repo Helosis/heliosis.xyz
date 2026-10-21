@@ -1,7 +1,7 @@
 {
   "versionCode": 3,
   "versionName": "1.2.0",
-  "apkUrl": "https://heliosis.xyz/heliosistv.apk",
+  "apkUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.0-downloads/heliosistv.apk",
   "fileName": "heliosistv.apk",
   "changelog": "HeliosisTV v1.2.0 Güncellemesi:\n• Otomatik Giriş: Kayıtlı hesap varsa her açılışta giriş ekranını otomatik atlayarak direkt ana ekrana geçer.\n• Bitiş Tarihi & Kullanıcı Bilgisi: Ana sayfanın en altında aktif kullanıcı adı ve IPTV abonelik bitiş tarihi anlık gösterilir.\n• Çoklu Hesap Yönetimi (Ayarlar): Birden fazla Xtream ve M3U hesabı ekleyebilir, aralarında tek tıkla geçiş yapabilirsiniz.\n• Android TV Kumanda Belirgin Çerçeve: Buketler ve kanallar arasında gezinirken odaklanan öge yüksek kontrastlı neon çerçeve ile belirginleşir.\n• Dizi ve Filmlerde Kaldığı Yerden Devam Etme: İzlenen süre kaydedilir, kart üzerinde ilerleme çubuğu gösterilir ve otomatik kaldığı dakikadan başlar.\n• Dizi Sezon ve Bölüm Desteği: Dizilerde sezon seçimi, bölüm listesi, bölüm süreleri ve bölüm bazlı kaldığı yerden devam etme desteği eklendi.\n• Hızlı İleri/Geri Sarma: Kumanda Sol/Sağ tuşları ile film ve dizilerde 10 saniye sarma.",
   "mandatory": false
