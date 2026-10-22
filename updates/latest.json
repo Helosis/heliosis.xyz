@@ -1,11 +1,11 @@
 {
-  "version": "1.1.0",
-  "releaseDate": "2026-10-19T22:45:45.052Z",
+  "version": "1.2.0",
+  "releaseDate": "2026-10-22T22:53:30.914Z",
   "mandatory": false,
-  "downloadUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.1.0/MEB-Teftis-Kurulum-1.1.0.exe",
-  "latestUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.1.0/MEB-Teftis-Kurulum-1.1.0.exe",
-  "fileName": "MEB-Teftis-Kurulum-1.1.0.exe",
-  "fileSize": 152085786,
-  "sha256": "a49b66aa49f384e1f29d35882cee931724f36ac68c760f6947d3647e4f721ee5",
-  "notes": "MEB Teftiş Kurulu PDF Editör Pro v1.1.0 Sürümü:\n- En güncel düzenlemeler ve stabilite iyileştirmeleri uygulandı.\n- Manuel ve Akıllı Form (Autofill) motoru güncellendi.\n- Otomatik arka plan güncelleme ve doğrudan üzerine kurulum yeteneği aktif.\n- Word ve Excel dönüştürmede fotoğraflar, krokiler ve el yazısı tablolar 100% netlikle korunur."
+  "downloadUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.2.0/MEB-Teftis-Kurulum-1.2.0.exe",
+  "latestUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.2.0/MEB-Teftis-Kurulum-1.2.0.exe",
+  "fileName": "MEB-Teftis-Kurulum-1.2.0.exe",
+  "fileSize": 152083229,
+  "sha256": "9b5a4d169ff03da1cfcee2f6cba028e8310ec0ea6b63af2496997c11c69cb398",
+  "notes": "MEB Teftiş Kurulu PDF Editör Pro v1.2.0 Sürümü:\n- En güncel düzenlemeler ve stabilite iyileştirmeleri uygulandı.\n- Manuel ve Akıllı Form (Autofill) motoru güncellendi.\n- Otomatik arka plan güncelleme ve doğrudan üzerine kurulum yeteneği aktif.\n- Word ve Excel dönüştürmede fotoğraflar, krokiler ve el yazısı tablolar 100% netlikle korunur."
 }
