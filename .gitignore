@@ -8,3 +8,4 @@ __pycache__/
 # Binaries uploaded to GitHub Releases (prevent Cloudflare 25MB limit failure)
 *.apk
 *.zip
+binaries_backup/
