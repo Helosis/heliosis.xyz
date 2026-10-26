@@ -1,8 +1,8 @@
 {
-  "versionCode": 4,
-  "versionName": "1.2.1",
-  "apkUrl": "https://github.com/Helosis/heliosis.xyz/releases/download/v1.0-downloads/heliosistv.apk",
+  "versionCode": 5,
+  "versionName": "1.3.0",
+  "apkUrl": "https://heliosis.xyz/heliosistv.apk",
   "fileName": "heliosistv.apk",
-  "changelog": "HeliosisTV v1.2.1 Güncellemesi:\n• Google TV & Android TV Çökme Düzeltmesi: Kanal seçildiğinde yaşanan kapanma hatası giderildi.\n• TV Kumanda Odaklama İyileştirmesi: Oynatıcı kontrollerinde D-Pad gezinimi ve odak efektleri optimize edildi.\n• Otomatik Giriş: Kayıtlı hesap varsa her açılışta giriş ekranını otomatik atlayarak direkt ana ekrana geçer.\n• Bitiş Tarihi & Kullanıcı Bilgisi: Ana sayfanın en altında aktif kullanıcı adı ve IPTV abonelik bitiş tarihi anlık gösterilir.\n• Çoklu Hesap Yönetimi (Ayarlar): Birden fazla Xtream ve M3U hesabı ekleyebilir, aralarında tek tıkla geçiş yapabilirsiniz.\n• Android TV Kumanda Belirgin Çerçeve: Buketler ve kanallar arasında gezinirken odaklanan öge yüksek kontrastlı neon çerçeve ile belirginleşir.\n• Dizi ve Filmlerde Kaldığı Yerden Devam Etme: İzlenen süre kaydedilir, kart üzerinde ilerleme çubuğu gösterilir ve otomatik kaldığı dakikadan başlar.\n• Dizi Sezon ve Bölüm Desteği: Dizilerde sezon seçimi, bölüm listesi, bölüm süreleri ve bölüm bazlı kaldığı yerden devam etme desteği eklendi.\n• Hızlı İleri/Geri Sarma: Kumanda Sol/Sağ tuşları ile film ve dizilerde 10 saniye sarma.",
+  "changelog": "HeliosisTV v1.3.0 Güncellemesi:\n• Yeni Ekran Mimarisi: Buketler ve içerik listesi ekranın solunda yan yana iki dikey sütun olarak açılır.\n• Canlı Sağ Ön İzleme: Seçilen kanal veya içerik doğrudan ekranın sağ tarafındaki entegre oynatıcıda ön izlenir.\n• Tek Tıkla Tam Ekran: Ön izleme alanındaki 'Tam Ekran' butonu ile anında tam ekran moda geçiş.\n• Hızlı Gezinme & Kumanda Uyumu: TV kumandası D-Pad ile sol sütundaki buketler arasında geçildiğinde orta sütundaki kanallar anında güncellenir ve sağdaki ön izleme kesintisiz akar.\n• Tüm v1.2 özellikleri (Otomatik Giriş, Bitiş Tarihi, Çoklu Hesaplar, Kaldığı Yerden Devam Etme) korunarak optimize edildi.",
   "mandatory": false
 }
