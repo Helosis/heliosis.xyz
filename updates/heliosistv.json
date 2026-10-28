@@ -1,8 +1,8 @@
 {
-  "versionCode": 6,
-  "versionName": "1.4.0",
-  "apkUrl": "https://heliosis.xyz/heliosistv.apk?v=1.4.0",
+  "versionCode": 7,
+  "versionName": "1.5.0",
+  "apkUrl": "https://heliosis.xyz/heliosistv.apk?v=1.5.0",
   "fileName": "heliosistv.apk",
-  "changelog": "HeliosisTV v1.4.0 Güncellemesi:\n• Akıllı Kanal Önbellekleme: Artık uygulama her açıldığında dakikalarca sunucudan kanal listesini indirmez; listeyi yerel belleğe kaydeder ve 3 günde bir otomatik günceller.\n• Anında Açılış Hızı: Kanal listesi önbellekten saliseler içinde yüklenir, bekleme süresi ortadan kalkar.\n• Manuel 'Kanalları Yenile' Butonu: Üst bara eklenen buton ile dilediğiniz an tek tıkla en güncel kanal ve film listesini sunucudan çekebilirsiniz.\n• Çevrimdışı / Kesinti Koruması: İnternet yavaşladığında veya sunucu yanıt vermediğinde mevcut önbellek otomatik açılarak yayınların kesintisiz sürmesi sağlandı.",
+  "changelog": "HeliosisTV v1.5.0 Güncellemesi:\n• Yatay Ekran Kilidi (Landscape): Telefon ve tabletlerde uygulamanın dik açılması engellendi; açılış ve tüm ekranlar doğrudan yatay (landscape) modda çalışacak şekilde kilitlendi.\n• 180° Çift Yön Desteği: Cihazı her iki tarafa (sağa veya sola) yatay tuttuğunuzda ekran sensörü otomatik olarak yönü düzeltir (şarj kablosu veya tutuş rahatlığı için).\n• Akıllı Kanal Önbelleği & Hızlı Açılış: Kanallar 3 gün boyunca yerel bellekte saklanır, anında açılır.\n• Manuel 'Kanalları Yenile' Butonu: Üst bardan dilediğiniz an tek tıkla liste güncellenebilir.",
   "mandatory": false
 }
